@@ -1,0 +1,384 @@
+/* === CONFIGURACIÓN GENERAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f8f8f8;
+  color: #222;
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* === SIDEBAR FIJA === */
+.sidebar {
+  width: 30%;
+  background-color: #3a4d27;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
+  
+  /* 🔥 Mantiene la barra fija */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+/* === CONTENIDO PRINCIPAL (ajustado para sidebar fija) === */
+.main-content {
+  width: 70%;
+  margin-left: 30%; /* 🔥 deja espacio para la sidebar fija */
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+
+.brand {
+  text-align: left;
+}
+
+.brand .logo {
+  width: 65px;
+  height: 65px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.brand .logo:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.brand h2 {
+  font-size: 1.6rem;
+  color: #d8f6c8;
+  letter-spacing: 1px;
+}
+
+.brand p {
+  color: #cce3b1;
+}
+
+/* === SECCIÓN DE SERVICIOS EN LA SIDEBAR === */
+.offerings {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.offerings h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #b4f28e;
+  margin-bottom: 1rem;
+  letter-spacing: 1.5px;
+}
+
+/* Servicios en vertical */
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+/* Tarjetas más grandes y uniformes */
+.card {
+  width: 100%;
+  background-color: #4f6232;
+  padding: 1.8rem 1rem;
+  border-radius: 16px;
+  text-align: center;
+  color: #d8f6c8;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.card span {
+  font-size: 2.3rem;
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.card p {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  background-color: #5f743f;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* === FOOTER === */
+footer {
+  text-align: left;
+  font-size: 0.85rem;
+  color: #b4f28e;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+}
+
+footer nav a {
+  color: #cce3b1;
+  text-decoration: none;
+  margin-right: 12px;
+  transition: 0.3s;
+}
+
+footer nav a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* === CONTENIDO PRINCIPAL === */
+.main-content {
+  width: 70%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+/* === SERVICIOS PROFESIONALES === */
+.services-section {
+  padding: 3rem 2rem;
+  background: #f3f8ee;
+  text-align: center;
+  border-top: 4px solid #3a4d27;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.services-section h2 {
+  color: #3a4d27;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.services-section .subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 320px;
+  overflow: hidden;
+  text-align: left;
+  transition: all 0.3s ease;
+  border-left: 5px solid #3a4d27;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-bottom: 3px solid #b4f28e;
+}
+
+.service-card h3 {
+  margin: 1rem;
+  color: #3a4d27;
+  font-size: 1.3rem;
+}
+
+.service-card p {
+  margin: 0 1rem 1.5rem;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* === RESEÑAS === */
+.reseñas .reseña {
+  display: none;
+  background: #f3f8ee;
+  border-left: 6px solid #3a4d27;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reseña h2 {
+  color: #3a4d27;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.reseña p {
+  color: #444;
+  line-height: 1.6;
+}
+
+/* === CASOS DE ÉXITO === */
+.success-section {
+  background-color: #f3f8ee;
+  padding: 3rem 2rem;
+  border-top: 4px solid #3a4d27;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05);
+  margin: 2rem 0;
+}
+
+.success-section h2 {
+  color: #3a4d27;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.success-category {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1100px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.success-category h3 {
+  color: #3a4d27;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.success-category p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* === GRID DE CASOS === */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.case-card {
+  background-color: #eaf2e3;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.case-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.case-card h4 {
+  margin: 10px 15px 5px;
+  font-size: 1.1rem;
+  color: #1b3d1a;
+}
+
+.case-card p {
+  margin: 0 15px 15px;
+  font-size: 0.95rem;
+  color: #2e462b;
+}
+
+/* === BOTÓN VER TODOS === */
+.ver-todos {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.btn-ver-todos {
+  background-color: #3a4d27;
+  color: #fff;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-ver-todos:hover {
+  background-color: #5b7341;
+  transform: translateY(-2px);
+}
+
+/* === ANIMACIÓN === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    font-size: 1rem;
+  }
+}
