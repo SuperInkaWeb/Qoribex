@@ -4,191 +4,352 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Qoribex | Innovación y Creatividad</title>
+  <meta name="description" content="Qoribex fusiona creatividad disruptiva y tecnología full stack para acelerar el crecimiento de marcas con soluciones 360°.">
   <link rel="icon" href="img/logoqori.png">
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- Desplazamiento suave -->
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
 </head>
 <body>
+  <header class="hero" id="inicio">
+    <nav class="top-nav">
+      <a class="nav-brand" href="#inicio" aria-label="Ir al inicio">
+        <img src="img/logoqori.png" alt="Logotipo de Qoribex">
+        <span>
+          <strong>Qoribex</strong>
+          <small>Innovación, diseño y estrategia en un solo clic</small>
+        </span>
+      </a>
 
-  <div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="brand">
-        <img src="img/logoqori.png" alt="Logo Qoribex" class="logo">
-        <h2>Qoribex</h2>
+      <div class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#casos">Casos de éxito</a>
+        <a href="#quienes-somos">Quiénes somos</a>
+        <a href="#blog">Insights</a>
+        <a href="#contacto">Contacto</a>
       </div>
 
-      <div class="offerings">
-        <h4>Nuestros Servicios</h4>
-        <div class="cards">
-          <a class="card" href="#branding-exito">
-            <span>⚡</span>
-            <p>Branding</p>
-          </a>
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="https://wa.me/51999999999" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-primary" href="#contacto">Agenda una reunión</a>
+      </div>
+    </nav>
 
-          <a class="card" href="#desarrollo-exito">
-            <span>💻</span>
-            <p>Desarrollo Web</p>
-          </a>
+    <div class="hero-inner">
+      <aside class="hero-toolbar" aria-label="Accesos directos a servicios">
+        <div class="toolbar-panel">
+          <p class="toolbar-eyebrow">Servicios 360°</p>
+          <h3 id="toolbar-title">Marketing 360°</h3>
+          <p id="toolbar-copy">Campañas de alto impacto con ROI medible que convierten visitas en clientes.</p>
+          <a class="toolbar-cta" href="#servicios">Explorar servicio</a>
+        </div>
 
-          <a class="card" href="#audiovisuales-exito">
-            <span>🎥</span>
-            <p>Audiovisuales</p>
-          </a>
+        <div class="toolbar-buttons" role="tablist" aria-label="Servicios destacados">
+          <button class="toolbar-btn active" data-key="marketing" role="tab" aria-selected="true">
+            <span class="icon">🎯</span>
+            <span>Marketing 360°</span>
+          </button>
+          <button class="toolbar-btn" data-key="branding" role="tab" aria-selected="false">
+            <span class="icon">✨</span>
+            <span>Branding</span>
+          </button>
+          <button class="toolbar-btn" data-key="web" role="tab" aria-selected="false">
+            <span class="icon">💻</span>
+            <span>Web & Tech</span>
+          </button>
+          <button class="toolbar-btn" data-key="comunicacion" role="tab" aria-selected="false">
+            <span class="icon">📣</span>
+            <span>Comunicación</span>
+          </button>
+        </div>
+      </aside>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hero-eyebrow">Socio estratégico de crecimiento</p>
+          <h1>Transformamos ideas en resultados medibles para marcas ambiciosas.</h1>
+          <p class="hero-description">Somos la agencia full stack que une creatividad disruptiva, comunicación estratégica y tecnología para escalar tu presencia digital, generar leads calificados y consolidar una comunidad auténtica.</p>
+
+          <ul class="hero-highlights">
+            <li>Soluciones integrales: branding, web, marketing, comunicación y experiencias IRL.</li>
+            <li>Landing pages estratégicas enfocadas en conversión y analítica.</li>
+            <li>Acompañamiento experto para equipos con visión de crecimiento.</li>
+          </ul>
+
+          <div class="cta-group">
+            <a class="btn btn-primary" href="#contacto">Agenda una consultoría</a>
+            <a class="btn btn-light" href="#casos">Ver casos de éxito</a>
+          </div>
+
+          <div class="hero-targets" role="list">
+            <div class="target-card" role="listitem">
+              <span class="target-value">+300%</span>
+              <span class="target-label">Leads calificados en 12 meses</span>
+            </div>
+            <div class="target-card" role="listitem">
+              <span class="target-value">+50%</span>
+              <span class="target-label">Conversión de prospectos</span>
+            </div>
+            <div class="target-card" role="listitem">
+              <span class="target-value">Comunidad</span>
+              <span class="target-label">Engagement y fidelización</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="photo-frame">
+            <img src="img/Qoribex1.jpg" alt="Equipo creativo de Qoribex trabajando">
+            <span class="photo-badge">360° Strategy Lab</span>
+          </div>
+
+          <div class="value-props">
+            <article class="prop-card">
+              <h3>Inteligencia Estratégica</h3>
+              <p>Investigación, data y analítica para tomar decisiones basadas en insights reales.</p>
+            </article>
+            <article class="prop-card">
+              <h3>Experiencias Digitales</h3>
+              <p>Desarrollo web full stack con performance, SEO técnico y escalabilidad.</p>
+            </article>
+            <article class="prop-card">
+              <h3>Contenido que Conecta</h3>
+              <p>Storytelling audiovisual, podcast y comunicación visual con sello Qoribex.</p>
+            </article>
+            <article class="prop-card">
+              <h3>Activaciones y Comunidad</h3>
+              <p>Campañas integrales y eventos híbridos que fidelizan y generan embajadores.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-section" id="quienes-somos">
+      <div class="section-heading">
+        <p class="section-eyebrow">¿Quiénes Somos?</p>
+        <h2>Qoribex es tu aliado para escalar marca, ventas y reputación.</h2>
+      </div>
+      <div class="about-content">
+        <p>Somos la agencia que se convierte en el epicentro digital de tu organización. Nuestro equipo multidisciplinario acompaña a gerentes de marketing, directores y fundadores de PYMEs y medianas empresas que buscan un socio único para integrar estrategia, creatividad y tecnología.</p>
+        <p>Desde posicionamiento en Google hasta campañas con ROI comprobable, construimos ecosistemas digitales autogestionables, conectados a CRM, automatizaciones y analítica avanzada.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <span class="about-icon">🚀</span>
+          <h3>Visión de crecimiento</h3>
+          <p>Diseñamos roadmaps de marketing que priorizan resultados rápidos sin perder la mirada estratégica.</p>
+        </div>
+        <div class="about-card">
+          <span class="about-icon">🤝</span>
+          <h3>Socios estratégicos</h3>
+          <p>Acompañamos a tu equipo con metodologías colaborativas y reporting claro orientado a KPIs.</p>
+        </div>
+        <div class="about-card">
+          <span class="about-icon">🔁</span>
+          <h3>Optimización continua</h3>
+          <p>Iteramos cada activo digital con data en tiempo real para potenciar conversiones y engagement.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="servicios">
+      <div class="section-heading">
+        <p class="section-eyebrow">Soluciones 360°</p>
+        <h2>Servicios pensados para impactar en cada punto del funnel.</h2>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <img src="img/branding.jpg" alt="Branding profesional">
+          <div class="service-content">
+            <h3>Branding & Identidad</h3>
+            <p>Construimos marcas con propósito: naming, identidad visual, manuales de estilo y activaciones que conectan.</p>
+            <div class="service-tags">
+              <span>Brand voice</span>
+              <span>Diseño editorial</span>
+              <span>Kit digital</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="img/desarrollo web.jpg" alt="Desarrollo Web profesional">
+          <div class="service-content">
+            <h3>Web & Tecnología</h3>
+            <p>Desarrollo full stack, integraciones con CRM/marketing automation, landing pages y e-commerce de alto desempeño.</p>
+            <div class="service-tags">
+              <span>UX/UI</span>
+              <span>SEO técnico</span>
+              <span>WordPress CMS</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="img/podcast3.jpg" alt="Audiovisuales creativos">
+          <div class="service-content">
+            <h3>Contenido & Audiovisual</h3>
+            <p>Producción de video, podcast, fotografía y contenido social diseñado para generar comunidad y fidelización.</p>
+            <div class="service-tags">
+              <span>Storytelling</span>
+              <span>Podcast studio</span>
+              <span>Live streaming</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="img/marketing.jpg" alt="Estrategia de marketing">
+          <div class="service-content">
+            <h3>Marketing & Performance</h3>
+            <p>Estrategias multicanal con seguimiento omnicanal, dashboards personalizados y optimización constante.</p>
+            <div class="service-tags">
+              <span>Growth</span>
+              <span>Automations</span>
+              <span>Data Studio</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="success-section" id="casos">
+      <div class="section-heading">
+        <p class="section-eyebrow">Casos de Éxito</p>
+        <h2>Resultados que elevan ventas, reputación y comunidad.</h2>
+      </div>
+
+      <div class="success-category" id="branding-exito">
+        <div class="category-header">
+          <h3>Branding</h3>
+          <p>Transformamos identidades para marcar la diferencia en cada touchpoint.</p>
+        </div>
+        <div class="cases-grid">
+          <article class="case-card">
+            <img src="img/branding.jpg" alt="Caso de branding">
+            <h4>Rebranding corporativo</h4>
+            <p>Renovamos la marca de un grupo educativo integrando storytelling y manuales omnicanal.</p>
+          </article>
+          <article class="case-card">
+            <img src="img/brading2.jpg" alt="Campaña visual">
+            <h4>Campaña visual integral</h4>
+            <p>Señalética, piezas para retail y ecosistema digital coherente para potenciar recordación.</p>
+          </article>
+          <article class="case-card">
+            <img src="img/branding3.jpg" alt="Manual de identidad">
+            <h4>Manual de identidad</h4>
+            <p>Guía escalable con versiones para partners, franquicias y equipos internos.</p>
+          </article>
         </div>
       </div>
 
-      <footer>
-        <p>© 2025 Qoribex</p>
-        <nav>
-          <a href="#">Contacto</a>
-          <a href="#">Redes</a>
-          <a href="#">Legal</a>
-        </nav>
-      </footer>
-    </aside>
-
-    <!-- Contenido principal -->
-    <main class="main-content">
-      <!-- Sección de servicios -->
-      <section id="servicios-profesionales" class="services-section">
-        <h2>💼 Nuestros Servicios</h2>
-        <p class="subtitle">Soluciones profesionales que impulsan tu crecimiento digital</p>
-
-        <div class="services-grid">
-          <div class="service-card">
-            <img src="img/branding.jpg" alt="Branding profesional">
-            <h3>🎨 Branding</h3>
-            <p>Diseñamos identidades visuales sólidas y memorables para construir una imagen coherente y moderna.</p>
-          </div>
-
-          <div class="service-card">
-            <img src="img/desarrollo web.jpg" alt="Desarrollo Web profesional">
-            <h3>💻 Desarrollo Web</h3>
-            <p>Creamos sitios y aplicaciones rápidas, seguras y escalables con tecnologías modernas.</p>
-          </div>
-
-          <div class="service-card">
-            <img src="img/podcast3.jpg" alt="Audiovisuales creativos">
-            <h3>🎥 Audiovisuales</h3>
-            <p>Producimos contenido visual que conecta, inspira y potencia la presencia de tu marca.</p>
-          </div>
+      <div class="success-category" id="desarrollo-exito">
+        <div class="category-header">
+          <h3>Web & Tecnología</h3>
+          <p>Portales, e-commerce y landing pages orientados a performance y SEO.</p>
         </div>
-      </section>
-
-      <!-- Casos de éxito -->
-      <section class="success-section">
-        <h2>🌟 Casos de Éxito</h2>
-
-        <!-- BRANDING -->
-        <div class="success-category" id="branding-exito">
-          <h3>🎨 Branding</h3>
-          <p>Proyectos que transformaron la identidad visual de grandes marcas.</p>
-
-          <div class="cases-grid">
-            <div class="case-card">
-              <img src="img/branding.jpg" alt="Caso de éxito branding 1">
-              <h4>Rebranding Corporativo</h4>
-              <p>Rediseñamos la identidad visual de una marca líder para modernizar su presencia.</p>
-            </div>
-            <div class="case-card">
-              <img src="img/brading2.jpg" alt="Caso de éxito branding 2">
-              <h4>Campaña Visual Integral</h4>
-              <p>Implementamos una campaña coherente que fortaleció la recordación de marca.</p>
-            </div>
-            <div class="case-card">
-              <img src="img/branding3.jpg" alt="Caso de éxito branding 3">
-              <h4>Manual de Identidad</h4>
-              <p>Desarrollamos un completo manual de identidad visual para uso institucional.</p>
-            </div>
-          </div>
+        <div class="cases-grid">
+          <article class="case-card">
+            <img src="img/web1.png" alt="Sitio corporativo">
+            <h4>Sitio corporativo</h4>
+            <p>Implementación full WordPress con integraciones de analytics, CRM y blog optimizado.</p>
+          </article>
+          <article class="case-card">
+            <img src="img/web2.jpg" alt="Tienda online">
+            <h4>Tienda online</h4>
+            <p>E-commerce escalable con pasarelas seguras y automatización de email marketing.</p>
+          </article>
+          <article class="case-card">
+            <img src="img/web3.jpg" alt="Landing page">
+            <h4>Landing page</h4>
+            <p>Landing para campañas de Ads con testing A/B y dashboards de conversión.</p>
+          </article>
         </div>
+      </div>
 
-        <!-- DESARROLLO WEB -->
-        <div class="success-category" id="desarrollo-exito">
-          <h3>💻 Desarrollo Web</h3>
-          <p>Implementaciones web que mejoraron presencia y rendimiento digital.</p>
-
-          <div class="cases-grid">
-            <div class="case-card">
-              <img src="img/web1.png" alt="Caso web 1">
-              <h4>Sitio Corporativo</h4>
-              <p>Desarrollamos un portal moderno, responsivo y optimizado para SEO.</p>
-            </div>
-            <div class="case-card">
-              <img src="img/web2.jpg" alt="Caso web 2">
-              <h4>Tienda Online</h4>
-              <p>Creamos un e-commerce intuitivo con integración de pasarelas de pago.</p>
-            </div>
-            <div class="case-card">
-              <img src="img/web3.jpg" alt="Caso web 3">
-              <h4>Landing Page</h4>
-              <p>Diseñamos una página de aterrizaje optimizada para campañas publicitarias.</p>
-            </div>
-          </div>
+      <div class="success-category" id="audiovisuales-exito">
+        <div class="category-header">
+          <h3>Contenido & Audiovisual</h3>
+          <p>Producciones que inspiran, fidelizan y generan conversación orgánica.</p>
         </div>
-
-        <!-- AUDIOVISUALES -->
-        <div class="success-category" id="audiovisuales-exito">
-          <h3>🎥 Audiovisuales</h3>
-          <p>Producciones que conectan emocionalmente con el público objetivo.</p>
-
-          <div class="cases-grid">
-            <div class="case-card">
-              <img src="img/audiovisual1.jpg" alt="Caso audiovisual 1">
-              <h4>Video Corporativo</h4>
-              <p>Producción audiovisual que comunica los valores y misión de la empresa.</p>
-            </div>
-            <div class="case-card">
-              <img src="img/audiovisual2.jpg" alt="Caso audiovisual 2">
-              <h4>Spot Publicitario</h4>
-              <p>Video de alto impacto para campañas de redes sociales y TV.</p>
-            </div>
-            <div class="case-card">
-              <img src="img/audiovisual3.jpg" alt="Caso audiovisual 3">
-              <h4>Contenido para RRSS</h4>
-              <p>Series cortas y clips diseñados para generar engagement en redes.</p>
-            </div>
-          </div>
+        <div class="cases-grid">
+          <article class="case-card">
+            <img src="img/audiovisual1.jpg" alt="Video corporativo">
+            <h4>Video corporativo</h4>
+            <p>Historias que humanizan la marca y activan a colaboradores y aliados estratégicos.</p>
+          </article>
+          <article class="case-card">
+            <img src="img/audiovisual2.jpg" alt="Spot publicitario">
+            <h4>Spot publicitario</h4>
+            <p>Producción audiovisual para streaming y TV con enfoque en awareness y tráfico.</p>
+          </article>
+          <article class="case-card">
+            <img src="img/audiovisual3.jpg" alt="Contenido para redes sociales">
+            <h4>Contenido social</h4>
+            <p>Series de cápsulas y lives que construyen comunidad digital y eventos híbridos.</p>
+          </article>
         </div>
-      </section>
-    </main>
-  </div>
+      </div>
+    </section>
 
-  <!-- Blog -->
-      <section class="Blog-section text-center ">
-        <h2>Blog 🗒️</h2>
+    <section class="insights-section" id="blog">
+      <div class="section-heading">
+        <p class="section-eyebrow">Insights & Blog</p>
+        <h2>Ideas, estrategias y recursos para liderar en digital.</h2>
+      </div>
+      <div class="insights-grid">
+        <article class="insight-card">
+          <h3>Playbook de landing pages que convierten</h3>
+          <p>Checklist descargable para construir páginas de campañas listas para Ads, SEO y nurturing.</p>
+          <a href="#" class="link-arrow">Descargar recurso</a>
+        </article>
+        <article class="insight-card">
+          <h3>Cómo medir un ROI claro en marketing full funnel</h3>
+          <p>Guía para conectar data de Google Analytics, CRM y automatizaciones sin perder de vista los KPIs.</p>
+          <a href="#" class="link-arrow">Leer artículo</a>
+        </article>
+        <article class="insight-card">
+          <h3>Branding y comunicación en tiempos de IA</h3>
+          <p>Framework para mantener la autenticidad y comunidad en experiencias digitales híbridas.</p>
+          <a href="#" class="link-arrow">Ver insights</a>
+        </article>
+      </div>
+    </section>
 
-        <div class="Blog-category" id="branding-exito">
-
-          <div class="cases-grid">
-            <div class="case-card">
-              <img src="img/Qoribex1.jpg" alt="Caso de éxito branding 1">
-              <h4>Tendencias y Tecnología en el peru</h4>
-              <p>En Perú, el desarrollo digital avanza con nuevas tecnologías web y mayor uso de contenido audiovisual para negocios y marcas.</p>
-            </div>
-            <div class="case-card">
-              <img src="img/Qoribex2.jpg" alt="Caso de éxito branding 2">
-              <h4>Detrás de Cámara / Proceso Creativo</h4>
-              <p>Mostramos cómo se crean los proyectos, desde las ideas hasta la producción final, destacando el trabajo del equipo y el proceso creativo detrás de cada resultado.</p>
-            </div>
-            <div class="case-card">
-              <img src="img/Qoribex3.jpg" alt="Caso de éxito branding 3">
-              <h4>Desarrollo web 2025</h4>
-              <p>El desarrollo web en 2025 se enfoca en velocidad, diseño adaptable, inteligencia artificial y experiencias más eficientes para usuarios y negocios.</p>
-            </div>
-          </div>
+    <section class="contact-cta" id="contacto">
+      <div class="cta-content">
+        <h2>Listos para impulsar tu siguiente trimestre de crecimiento.</h2>
+        <p>Co-creemos tu ecosistema digital con landing pages, automatizaciones y contenido que genera clientes reales.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://calendly.com" target="_blank" rel="noopener">Agenda una reunión</a>
+          <a class="btn btn-outline" href="mailto:hola@qoribex.com">Escríbenos</a>
         </div>
+      </div>
+    </section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <img src="img/logoqori.png" alt="Logotipo Qoribex">
+      <div>
+        <strong>Qoribex</strong>
+        <p>Innovación, diseño y estrategia en un solo clic.</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#casos">Casos</a>
+      <a href="#blog">Insights</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="footer-meta">
+      <span>© 2025 Qoribex. Todos los derechos reservados.</span>
+      <a href="#">Aviso legal</a>
+      <a href="#">Política de privacidad</a>
+    </div>
+  </footer>
 
-
-
-
+  <script src="js/main.js"></script>
 </body>
 </html>
