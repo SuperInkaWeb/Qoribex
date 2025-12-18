@@ -43,9 +43,39 @@
 }
 
 
-
+/*Boton Servicios*/
 
 .btn-amarillo {
+  background-color: #e5c524;
+  color: #1e459b !important;
+  font-weight: 600;
+  border: none;
+  border-radius: 0 0 0 20px;
+  width: 110px;
+  height: 100px;
+  transition: 0.3s;
+  text-decoration: none !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.btn-amarillo:hover {
+  background-color: #e5c524;
+  color: #1e459b !important;
+  text-decoration: none !important;
+}
+
+.btn-amarillo img {
+  margin-bottom: 6px;
+}
+
+
+
+/*Boton de Blog*/
+.btn-amarillo1 {
   background-color: #e5c524;
   color: #1e459b !important;
   font-weight: 600;
@@ -61,15 +91,78 @@
   align-items: center;
 }
 
-.btn-amarillo:hover {
+
+.btn-amarillo1:hover {
   background-color: #e5c524;
   color: #1e459b !important;
   text-decoration: none !important;
 }
 
-.btn-amarillo img {
+.btn-amarillo1 img {
   margin-bottom: 6px;
 }
+
+/*Portafolio*/
+.btn-amarillo2 {
+  background-color: #e5c524;
+  color: #1e459b !important;
+  font-weight: 600;
+  border: none;
+  border-radius: 0 0 20px 0;
+  width: 110px;
+  height: 100px;
+  transition: 0.3s;
+  text-decoration: none !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.btn-amarillo2:hover {
+  background-color: #e5c524;
+  color: #1e459b !important;
+  text-decoration: none !important;
+}
+
+.btn-amarillo2 img {
+  margin-bottom: 6px;
+}
+
+
+.barra-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 850px;
+  margin: 6px 20px;
+  padding: 2px 20px;
+
+  background: linear-gradient(
+    to bottom,
+    #e5c524 0%,
+    #e5c524 40%,
+    #1e459b 100%
+  );
+
+  border-radius: 6px;
+}
+
+.barra-menu span {
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+
+
+
+
 
 .galeria-3x3 {
     width: 90%;
