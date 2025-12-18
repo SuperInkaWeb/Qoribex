@@ -1,0 +1,312 @@
+body {
+    min-height: 200vh;
+}
+
+.custom-navbar {
+    background-color: #1e459b !important;
+}
+
+.img-Encabezado {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.navbar-brand1{
+  color: #ffff;
+  margin-top: 40px;
+  line-height: 1.2;
+  position: relative;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: left; 
+  text-decoration: none;
+}
+
+.Subtitulo_1 {
+  color: #1e459b;
+  margin-top: 40px;
+  line-height: 1.2;
+  position: relative;
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center; 
+  text-decoration: none;
+}
+
+#carouselExampleCaptions {
+    max-width: 900px;
+    margin: auto;
+    
+}
+
+#carouselExampleCaptions .carousel-item img {
+    height: auto;
+    object-fit: cover;
+}
+
+.Cuadro-amarrillodecarrusel {
+    background-color: #e5c524;
+    width: 1200px;
+    height: 405px;
+    margin: 0 auto;
+    position: relative;
+    top: -450px;
+    z-index: -1;
+}
+
+
+
+.carrusel-q {
+  width: 100%;
+  max-width: 1000px;   
+  margin: 0 auto;
+  position: relative;
+}
+
+.img-q {
+  width: 100%;
+  height: 450px;       
+  object-fit: contain; 
+}
+
+
+.texto-abajo {
+  padding: 15px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e459b;
+  text-align: center;
+}
+
+
+.boton-q {
+  top: 40%;
+  width: 50px;
+  height: 50px;
+  opacity: 1 !important;
+}
+
+.flecha-circulo {
+  width: 85px;
+  height: 45px;
+  background: #e5c524;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid white;
+}
+
+.flecha {
+  font-size: 72px;
+  color: #1e459b;
+  font-weight: bold;
+  position: relative;
+  top: -10px;   
+}
+
+.img-q {
+  width: 100%;
+  height: 450px;
+  object-fit: contain;
+}
+
+.texto-abajo {
+  padding: 40px 40px 50px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+
+
+/* TÍTULO */
+.texto-abajo h2 {
+  color: #1e459b;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+/* LÍNEA CENTRADA */
+.linea-centro {
+  width: 50%;
+  height: 3px;
+  background: #1e459b;
+  border: none;
+  margin: 0 auto 25px;
+}
+
+/* PÁRRAFO */
+.descripcion {
+  color: #2e2e2e;
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 760px;
+  margin: 0 auto 20px;
+}
+
+/* AUTOR */
+.autor {
+  color: #1e459b;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+.footer4 {
+  background-color: #1e459b;
+  padding: 60px 40px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  margin-top: -250px;
+}
+
+
+.footer-top-text4 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.footer-top-text4 .yellow {
+  color: #e5c524;
+}
+
+.footer-top-text4 .white {
+  color: #ffffff;
+}
+
+.footer-top-text4 .green {
+  color: #e5c524;
+}
+
+
+.footer-container4 {
+  display: grid;
+  grid-template-columns: 280px 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+
+.logo4 {
+  width: 300px;
+  margin-bottom: 20px;
+  height: auto;
+}
+
+.subscribe-box4 label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.subscribe-box4 input {
+  background: #e5c524;
+  border-radius: 35px;
+  padding: 12px 20px;
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  color: #000;
+}
+
+.subscribe-box4 {
+  margin-left: 50px;
+}
+
+
+.footer-column4 {
+  margin-top: 100px;
+  position: relative;
+  padding-left: 25px;
+}
+
+
+.footer-column4:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 150px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+
+.footer-column4 h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-column4 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.9;
+  font-size: 14px;
+  width: fit-content;
+}
+
+
+.social-icons4 {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.social-icons4 img {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+
+.footer-bottom4 {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 40px;
+  padding-top: 15px;
+  text-align: center;
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  font-size: 13px;
+}
+
+
+.footer4 {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-deco4 {
+  position: absolute;
+  width: 130px;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+
+.deco41 {
+  top: 10px;
+  left: 10px;
+}
+
+
+.deco42 {
+  bottom: 20px;
+  right: 30px;
+  top: 35%;
+}
+
+.deco43 {
+  top: 85%;
+  transform: translateY(-50%);
+  right: 0px;
+}

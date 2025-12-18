@@ -1,0 +1,81 @@
+body {
+  min-height: 200vh;
+  font-family: "Poppins", sans-serif; 
+  font-size: 18px;
+}
+
+.custom-navbar{
+  background-color: #1e459b !important;
+  height: 200px;
+}
+
+.navbar-brand {
+  font-family: "Poppins", sans-serif;   
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 52px; 
+}
+
+.nav-img-right {
+  position: absolute;
+  top: 100px;   
+  right: 300px;  
+  width: 150px;  
+  height: auto;
+}
+
+.nav-img-lef{
+  position: absolute;
+  bottom: -10px;    
+  right: 75%;       
+  transform: translateX(50%); 
+  width: 150px;
+  top: 0;
+}
+
+.img-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+}
+
+.fondo-img{
+    width: 1400px;
+    height: auto;   
+}
+
+.text-center{
+    margin-top: 50px;
+    color: #1e459b;
+    font-family: "Poppins", sans-serif; 
+    font-size: 30px;
+}
+ 
+.cuadrado-wsp{
+    background-color: #e5c524 ;
+    border-radius: 10px;
+    width: 200px;
+    height: 45px;
+    margin: 0 auto;
+}
+
+.whastapp-xd{
+    width: 45px;
+    margin-left: 10px;
+}
+.contactanos{
+    margin-top: -35px;
+    margin-left: 60px;
+    color: #1e459b;
+     font-family: "Poppins", sans-serif;   
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 18px; 
+}
+
+.video-reproduccion{
+  display: flex;
+  justify-content: center;   
+  margin-top: 50px;  
+}
