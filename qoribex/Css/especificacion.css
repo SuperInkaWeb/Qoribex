@@ -387,7 +387,15 @@ html, body {
   right: 0px;
 }
 
+.deco4{
+  top: 25px;
+  transform: translateX(1300px) scaleX(-1);
+}
 
+.deco44{
+  top: 25px;
+  transform: translateX(1300px) scaleX(-1);
+}
 @media (max-width: 768px) {
 
   .img_logo {
