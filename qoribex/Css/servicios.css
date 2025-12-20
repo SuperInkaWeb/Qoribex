@@ -322,3 +322,9 @@
   transform: translateY(-50%);
   right: 0px;
 }
+
+
+.deco4x4{
+  top: 25px;
+  transform: translateX(1300px) scaleX(-1);
+}
