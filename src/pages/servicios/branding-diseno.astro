@@ -1,0 +1,58 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import { Image } from 'astro:assets';
+import '../../styles/home.css';
+
+import heroServiceImg from '../../assets/servicios/diseno-grafico.jpg';
+
+import detailServiceImg from '../../assets/servicios/detalle-servicios/diseno-grafico.jpg';
+
+const serviceData = {
+    title: "Branding y Diseño Gráfico",
+    description: "Construimos identidades visuales memorables. Desde el logotipo hasta el manual de marca completo, nos aseguramos de que tu empresa proyecte profesionalismo, confianza y diferenciación en cada punto de contacto.",
+    features: [
+        "Diseño de Logotipos e Identidad Visual",
+        "Manual de Marca (Brandbook)",
+        "Papelería corporativa",
+        "Diseño de packaging y etiquetas",
+        "Rebranding y actualización de marca"
+    ]
+};
+---
+
+<Layout title={`${serviceData.title} - Qoribex`}>
+    <Navbar />
+    <main class="pt-20">
+        <section class="relative w-full h-[60vh] bg-black flex items-center justify-center overflow-hidden">
+            <Image src={heroServiceImg} alt={serviceData.title} class="absolute inset-0 w-full h-full object-cover opacity-60" />
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-4">{serviceData.title}</h1>
+                <p class="text-xl text-gray-200 max-w-2xl mx-auto">Identidades que dejan huella.</p>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-[#1F23A3] mb-6">¿Qué ofrecemos?</h2>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">{serviceData.description}</p>
+                        <ul class="space-y-3">
+                            {serviceData.features.map(feature => (
+                                    <li class="flex items-center gap-3 text-gray-700"><span class="text-yellow-400 font-bold">✓</span> {feature}</li>
+                            ))}
+                        </ul>
+                        <div class="mt-8">
+                            <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20Branding" target="_blank" class="inline-block bg-[#1F23A3] text-white px-8 py-3 rounded-full font-bold hover:bg-yellow-400 hover:text-[#1F23A3] transition-all shadow-lg">Cotizar Servicio</a>
+                        </div>
+                    </div>
+                    <div class="w-full h-full min-h-[300px] rounded-3xl overflow-hidden shadow-xl">
+                        <Image src={detailServiceImg} alt="Detalle del servicio" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-[#1F23A3] text-white py-10 text-center"><p>&copy; 2025 Qoribex.</p></footer>
+</Layout>

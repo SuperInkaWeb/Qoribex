@@ -1,0 +1,370 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+// Importamos el componente Navbar reutilizable
+import Navbar from '../components/Navbar.astro';
+
+// Importar Estilos CSS Externos
+import '../styles/home.css';
+
+// ==========================================
+// 1. IMPORTACIÓN DE ACTIVOS
+// ==========================================
+import heroImg from '../assets/hero-image.png';
+// Logo ya no se necesita aquí porque está en el componente Navbar
+
+// Redes Sociales (Assets)
+import logoFb from '../assets/logos/logo-facebook.png';
+import logoIg from '../assets/logos/logo-instagram.jpg';
+import logoLi from '../assets/logos/logo-linkdin.png';
+import logoWa from '../assets/logos/logo-whatsapp.png';
+import logoX from '../assets/logos/logo-x.png';
+
+// Banner WhatsApp
+import bannerWhatsapp from '../assets/banner-contactanos.png';
+
+// ==========================================
+// 2. DATOS
+// ==========================================
+
+import serv8 from '../assets/servicios/animacion-digital.jpg';
+import serv9 from '../assets/servicios/comunicacion-periodismo-corporativo.jpg';
+import serv10 from '../assets/servicios/diseno-grafico.jpg';
+import serv11 from '../assets/servicios/diseño-digital-web.jpg';
+import serv12 from '../assets/servicios/irl-experiencias.jpg';
+import serv13 from '../assets/servicios/marketing-digital-ventas.jpg';
+import serv14 from '../assets/servicios/podcast-produccion.jpg';
+import serv15 from '../assets/servicios/produccion-audiovisual.jpg';
+import serv16 from '../assets/servicios/produccion-grafica.jpg';
+
+const servicios = [
+    { img: serv8, title: "Animación digital y motion graphics", link: "/servicios/animacion-digital" },
+    { img: serv9, title: "Comunicación y periodismo corporativo", link: "/servicios/comunicacion-corporativa" },
+    { img: serv10, title: "Branding y diseño gráfico", link: "/servicios/branding-diseno" },
+    { img: serv11, title: "Diseño digital y web", link: "/servicios/diseno-web" },
+    { img: serv12, title: "IRL y experiencias en vivo", link: "/servicios/irl-experiencias" },
+    { img: serv13, title: "Marketing digital y ventas", link: "/servicios/marketing-digital" },
+    { img: serv14, title: "Podcast y producción de contenido sonoro", link: "/servicios/podcast" },
+    { img: serv15, title: "Producción audiovisual", link: "/servicios/produccion-audiovisual" },
+    { img: serv16, title: "Producción gráfica y publicitaria", link: "/servicios/produccion-grafica" },
+];
+
+const serviciosFooter = [
+    "Branding y diseño gráfico",
+    "Marketing digital y ventas",
+    "Diseño digital y web",
+    "Produccion audiovisual",
+    "Comunicación y periodismo corporativo",
+    "Animación digital y motion graphics",
+    "IRL y experiencias en vivo",
+    "Producción gráfica y publicitaria",
+    "Podcast y producción de contenido sonoro"
+];
+
+import cli17 from '../assets/clientes/QORIBEX-17.jpg';
+import cli18 from '../assets/clientes/QORIBEX-18.jpg';
+import cli19 from '../assets/clientes/QORIBEX-19.jpg';
+import cli20 from '../assets/clientes/QORIBEX-20.jpg';
+import cli21 from '../assets/clientes/QORIBEX-21.jpg';
+import cli22 from '../assets/clientes/QORIBEX-22.jpg';
+import cli23 from '../assets/clientes/QORIBEX-23.jpg';
+import cli24 from '../assets/clientes/QORIBEX-24.jpg';
+
+const clientesBase = [cli24, cli19, cli21, cli22, cli18, cli17, cli23, cli20];
+const clientes = [...clientesBase, ...clientesBase, ...clientesBase];
+
+import portHistorias from '../assets/portafolio/QORIBEXhistorias-04.png';
+import portPortadas from '../assets/portafolio/QORIBEX portadas mensuales-04.png';
+import portArte from '../assets/portafolio/QORIBEX arteblog-04.png';
+import portGraficas from '../assets/portafolio/QORIBEX piezas gráficas-04.png';
+import portReels from '../assets/portafolio/QORIBEX reels-04.png';
+
+const portfolioItems = [
+    {
+        img: portHistorias,
+        title: "Historias",
+        desc: "Storytelling visual",
+        link: "#" // Sin página específica aún
+    },
+    {
+        img: portPortadas,
+        title: "Portadas Mensuales",
+        desc: "Diseño editorial",
+        link: "/portafolio/portadas-mensuales" // Nuevo Link
+    },
+    {
+        img: portArte,
+        title: "Arte Blog",
+        desc: "Ilustración digital",
+        link: "/portafolio/arte-blog" // Nuevo Link
+    },
+    {
+        img: portGraficas,
+        title: "Piezas Gráficas",
+        desc: "Branding",
+        link: "#" // Sin página específica aún
+    },
+    {
+        img: portReels,
+        title: "Reels",
+        desc: "Edición dinámica",
+        link: "/portafolio/reels" // Nuevo Link
+    },
+];
+---
+
+<Layout title="Qoribex - Innovación, diseño y estrategia">
+
+    <!-- SPLASH SCREEN -->
+    <div id="intro-overlay" class="fixed inset-0 z-[100] bg-black flex items-center justify-center transition-opacity duration-700">
+        <video id="intro-video" class="w-full h-full object-cover" muted playsinline>
+            <source src="/videos/intro.mp4" type="video/mp4">
+        </video>
+        <button id="skip-intro" class="absolute bottom-8 right-8 text-white border border-white/50 bg-black/30 backdrop-blur-sm px-5 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all z-[101]">
+            Saltar Intro
+        </button>
+    </div>
+
+    <!-- NAVBAR COMPONENT -->
+    <Navbar />
+
+    <main class="opacity-0 transition-opacity duration-1000" id="main-content">
+
+        <!-- HERO -->
+        <section class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#f8faff] pt-24 md:pt-0">
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100 opacity-80"></div>
+                <div class="absolute inset-0 opacity-[0.08]" style="background-image: radial-gradient(#1F23A3 1px, transparent 1px); background-size: 30px 30px;"></div>
+                <div class="absolute -top-20 -right-20 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-yellow-200/40 rounded-full mix-blend-multiply filter blur-[60px] md:blur-[80px] animate-blob"></div>
+                <div class="absolute -top-20 -left-20 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-blue-300/40 rounded-full mix-blend-multiply filter blur-[60px] md:blur-[80px] animate-blob animation-delay-2000"></div>
+                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-purple-200/30 rounded-full mix-blend-multiply filter blur-[60px] md:blur-[80px] animate-blob animation-delay-4000"></div>
+            </div>
+
+            <div class="container mx-auto px-4 md:px-6 relative z-10 w-full h-full flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-100px)]">
+                <div class="w-full md:w-5/12 lg:w-1/2 flex flex-col justify-center items-start space-y-6 md:space-y-8 animate-fade-in-up text-center md:text-left mb-10 md:mb-0 order-2 md:order-1">
+                    <div class="inline-flex items-center gap-2 bg-[#1F23A3]/10 text-[#1F23A3] px-4 py-1.5 rounded-full text-xs md:text-sm font-bold tracking-wider mb-2 mx-auto md:mx-0 border border-[#1F23A3]/20">
+                        <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+                        AGENCIA DIGITAL
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#1F23A3] leading-[1.1] tracking-tight">
+                        Innovación, <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 relative">diseño y estrategia</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 leading-relaxed font-medium max-w-lg mx-auto md:mx-0">
+                        Transformamos tus ideas en experiencias digitales que conectan, impactan y venden.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center md:justify-start">
+                        <a href="#servicios" class="group bg-[#1F23A3] text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-800 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-3 text-base">
+                            Ver Servicios <span>↓</span>
+                        </a>
+                        <a href="#portafolio" class="group border-2 border-[#1F23A3] text-[#1F23A3] px-8 py-4 rounded-xl font-bold hover:bg-[#1F23A3] hover:text-white transition-all duration-300 text-base text-center bg-white/50 backdrop-blur-sm flex items-center justify-center gap-2">
+                            Nuestro Trabajo <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-7/12 lg:w-1/2 relative flex justify-center items-center order-1 md:order-2 h-[50vh] md:h-[85vh]">
+                    <div class="relative w-full h-full flex items-center justify-center">
+                        <Image
+                                src={heroImg}
+                                alt="Qoribex Hero"
+                                class="relative z-10 w-full h-full object-contain drop-shadow-2xl hover:drop-shadow-[0_30px_50px_rgba(31,35,163,0.3)] transition-all duration-700 hover:scale-[1.05] rounded-[3rem]"
+                                loading="eager"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN QUIÉNES SOMOS -->
+        <section class="py-20 md:py-32 bg-white relative z-10">
+            <div class="container mx-auto px-4 md:px-6 text-center max-w-5xl">
+                <span class="text-yellow-500 font-bold tracking-widest text-sm uppercase mb-4 block">Sobre Nosotros</span>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-black text-[#1F23A3] mb-8 md:mb-12 tracking-tight">¿QUIÉNES SOMOS?</h2>
+                <div class="prose prose-lg md:prose-xl mx-auto text-gray-600 leading-relaxed text-pretty">
+                    <p>
+                        En <strong class="text-[#1F23A3] font-black">QORIBEX</strong> somos una agencia de marketing digital y web que combina
+                        creatividad, comunicación y tecnología para <strong class="text-[#1F23A3] bg-yellow-100 px-2 py-0.5 rounded">impulsar marcas</strong> al siguiente nivel.
+                    </p>
+                    <p class="mt-6">
+                        Nuestro enfoque está orientado a generar resultados reales en ventas, branding y posicionamiento digital,
+                        construyendo estrategias que conectan con las personas y transforman la <strong class="text-[#1F23A3]">presencia online</strong> en crecimiento tangible.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-10 mt-16">
+                    <div class="group p-8 border border-gray-100 rounded-3xl bg-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <h3 class="text-4xl md:text-5xl font-black text-[#1F23A3] mb-2">+150</h3>
+                        <p class="text-gray-500 font-bold text-sm md:text-base uppercase">Proyectos Entregados</p>
+                    </div>
+                    <div class="group p-8 border border-gray-100 rounded-3xl bg-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <h3 class="text-4xl md:text-5xl font-black text-[#1F23A3] mb-2">+50</h3>
+                        <p class="text-gray-500 font-bold text-sm md:text-base uppercase">Clientes Felices</p>
+                    </div>
+                    <div class="group p-8 border border-gray-100 rounded-3xl bg-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <h3 class="text-4xl md:text-5xl font-black text-[#1F23A3] mb-2">5A</h3>
+                        <p class="text-gray-500 font-bold text-sm md:text-base uppercase">Años de Experiencia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios" class="py-20 md:py-32 bg-gray-50 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#1F23A3]/20 to-transparent"></div>
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <div class="text-center mb-16 md:mb-20">
+                    <span class="text-yellow-500 font-bold tracking-widest text-sm uppercase">Lo que hacemos</span>
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black text-[#1F23A3] mt-3">NUESTROS SERVICIOS</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    {servicios.map((item) => (
+                            <a href={item.link} class="group relative overflow-hidden rounded-2xl block hover:-translate-y-2 transition-all duration-300 shadow-md hover:shadow-xl">
+                                <Image
+                                        src={item.img}
+                                        alt={item.title}
+                                        class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                            </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- CLIENTES -->
+        <section class="py-16 md:py-24 bg-white relative overflow-hidden">
+            <div class="container mx-auto px-4 md:px-6 mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-400 tracking-widest uppercase">Ellos confían en nosotros</h2>
+            </div>
+
+            <div class="relative w-full overflow-hidden group">
+                <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
+                <div class="flex animate-scroll whitespace-nowrap gap-12 md:gap-24 items-center">
+                    {clientes.map((cliente) => (
+                            <div class="w-32 md:w-48 flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer opacity-80 hover:opacity-100">
+                                <Image src={cliente} alt="Cliente Qoribex" class="w-full h-auto object-contain mix-blend-multiply" />
+                            </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTAFOLIO -->
+        <section id="portafolio" class="py-20 md:py-32 bg-[#0a0a0a] text-white overflow-hidden relative">
+            <div class="absolute inset-0 opacity-30 stars"></div>
+            <div class="container mx-auto px-4 md:px-6 mb-12 text-center relative z-10">
+                <span class="text-yellow-400 font-bold tracking-widest text-sm uppercase">Galería</span>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-black mt-3">NUESTRO PORTAFOLIO</h2>
+            </div>
+            <div class="relative max-w-5xl mx-auto px-4 group z-10">
+                <div class="overflow-hidden rounded-3xl aspect-square md:aspect-video">
+                    <div id="slider-track" class="flex transition-transform duration-700 cubic-bezier(0.4, 0, 0.2, 1) h-full">
+                        {portfolioItems.map((item) => (
+                                <div class="w-full flex-shrink-0 relative h-full group/slide">
+                                    <!-- Enlace que envuelve la imagen -->
+                                    <a href={item.link} class={`block w-full h-full relative ${item.link === '#' ? 'cursor-default' : 'cursor-pointer'}`}>
+                                        <Image src={item.img} alt={item.title} class="w-full h-full object-cover" />
+
+                                        <!-- Overlay con texto (Visible siempre o en hover, según prefieras) -->
+                                        <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-8 md:p-12 opacity-0 group-hover/slide:opacity-100 transition-opacity duration-300">
+                                            <span class="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-2">{item.desc}</span>
+                                            <h3 class="text-3xl md:text-5xl font-black">{item.title}</h3>
+                                            {item.link !== '#' && (
+                                                    <span class="mt-4 inline-flex items-center gap-2 text-sm font-bold border-b border-white w-max pb-1">
+                                                Ver proyecto completo →
+                                            </span>
+                                            )}
+                                        </div>
+                                    </a>
+                                </div>
+                        ))}
+                    </div>
+                </div>
+                <button id="prev-btn" class="absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-yellow-400 hover:text-[#1F23A3] hover:scale-110 transition-all duration-300 z-20 group focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                </button>
+                <button id="next-btn" class="absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-yellow-400 hover:text-[#1F23A3] hover:scale-110 transition-all duration-300 z-20 group focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                </button>
+                <div class="flex justify-center gap-3 mt-8">
+                    {portfolioItems.map((_, index) => (
+                            <button class="indicator-dot w-3 h-3 rounded-full bg-white/20 hover:bg-white transition-all duration-300 focus:outline-none" data-index={index} aria-label={`Ir a diapositiva ${index + 1}`}></button>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- BANNER WHATSAPP -->
+        <section class="w-full bg-white overflow-hidden py-12 md:py-20">
+            <div class="container mx-auto px-4 md:px-6">
+                <a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer" class="block w-full">
+                    <div class="w-full h-auto relative overflow-hidden rounded-3xl">
+                        <Image src={bannerWhatsapp} alt="Contáctanos por WhatsApp" class="w-full h-auto object-cover" />
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer id="contacto" class="bg-[#1F23A3] text-white pt-20 pb-10 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-30 animate-pulse"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20"></div>
+
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 mb-20 border-b border-white/10 pb-16">
+                    <div class="space-y-8">
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">¿Hablamos de tu <br><span class="text-yellow-400">próximo proyecto?</span></h2>
+                        <p class="text-blue-100 text-lg max-w-md leading-relaxed">Estamos listos para llevar tu marca al siguiente nivel. Escríbenos y hagamos magia juntos.</p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="mailto:hola@qoribex.com" class="inline-flex items-center justify-center gap-3 bg-yellow-400 text-[#1F23A3] px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 shadow-lg hover:shadow-yellow-400/20 hover:-translate-y-1"><span>👋</span> hola@qoribex.com</a>
+                            <a href="https://wa.me/51999999999" class="inline-flex items-center justify-center gap-3 border border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#1F23A3] transition-all duration-300 group">
+                                <Image src={logoWa} alt="WhatsApp" class="w-6 h-6 object-contain brightness-0 invert group-hover:invert-0 transition-all duration-300" /> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:pl-12">
+                        <div>
+                            <h4 class="text-yellow-400 font-bold mb-6 text-sm tracking-widest uppercase">Servicios</h4>
+                            <ul class="text-blue-100 space-y-3 text-sm">
+                                {serviciosFooter.map((servicio) => (
+                                        <li class="hover:text-white transition-colors cursor-default">• {servicio}</li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-yellow-400 font-bold mb-6 text-sm tracking-widest uppercase">Síguenos</h4>
+                            <div class="flex gap-4 flex-wrap">
+                                <a href="https://www.facebook.com/superinka" target="_blank" rel="noopener noreferrer" class="group bg-white p-2 rounded-full transition-all duration-300 hover:scale-110 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 hover:bg-yellow-400 text-white">
+                                    <Image src={logoFb} alt="Facebook" class="w-full h-full object-contain" />
+                                </a>
+                                <a href="https://www.instagram.com/qoribex/" target="_blank" rel="noopener noreferrer" class="group bg-white p-2 rounded-full transition-all duration-300 hover:scale-110 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 hover:bg-yellow-400 text-white">
+                                    <Image src={logoIg} alt="Instagram" class="w-full h-full object-contain rounded-full" />
+                                </a>
+                                <a href="https://www.linkedin.com/company/qoribex" target="_blank" rel="noopener noreferrer" class="group bg-white p-2 rounded-full transition-all duration-300 hover:scale-110 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 hover:bg-yellow-400 text-white">
+                                    <Image src={logoLi} alt="LinkedIn" class="w-full h-full object-contain" />
+                                </a>
+                                <a href="https://x.com/Qoribex" target="_blank" rel="noopener noreferrer" class="group bg-white p-2 rounded-full transition-all duration-300 hover:scale-110 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 hover:bg-yellow-400 text-white">
+                                    <Image src={logoX} alt="X" class="w-full h-full object-contain" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-between items-center text-sm text-blue-300/60 gap-4">
+                    <p>&copy; {new Date().getFullYear()} Qoribex Agencia Digital. Todos los derechos reservados.</p>
+                    <div class="flex gap-8">
+                        <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
+                        <a href="#" class="hover:text-white transition-colors">Términos y Condiciones</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+</Layout>
+
+<!-- Script Externo (Reutilizando el de Home) -->
+<script src="../scripts/home.js"></script>

@@ -1,0 +1,30 @@
+---
+// src/layouts/Layout.astro
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Agencia Qoribex" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-900 text-white font-['Outfit']">
+<slot />
+</body>
+</html>
+
+<style is:global>
+    /* CSS Global mínimo */
+    html {
+        scroll-behavior: smooth;
+    }
+</style>

@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+// Importamos Navbar
+import Navbar from '../components/Navbar.astro';
+
+// Estilos
+import '../styles/blog.css';
+import '../styles/article.css';
+
+// Activos General
+import logoImg from '../../assets/logos/logo-principal.png';
+
+import logoFb from '../assets/logos/logo-facebook.png';
+import logoIg from '../assets/logos/logo-instagram.jpg';
+import logoLi from '../assets/logos/logo-linkdin.png';
+import logoWa from '../assets/logos/logo-whatsapp.png';
+import logoX from '../assets/logos/logo-x.png';
+
+// Imágenes Artículo
+import imgHero from '../assets/blog/ARTÍCULO QORIBEX PIEZAS GRÁFICAS_Mesa de trabajo 1.png';
+import imgBody1 from '../assets/blog/ARTÍCULO QORIBEX PIEZAS GRÁFICAS-02.png';
+import imgBody2 from '../assets/blog/ARTÍCULO QORIBEX PIEZAS GRÁFICAS-03.png';
+import imgBody3 from '../assets/blog/ARTÍCULO QORIBEX PIEZAS GRÁFICAS-04.png';
+
+const articleData = {
+    title: "El poder del grid: cómo la composición cambia la percepción de tu marca. Pt 1.",
+    author: "Sheryl Rodriguez",
+    date: "01/01/2025",
+    category: "Diseño Gráfico"
+};
+
+const serviciosFooter = [
+    "Branding y diseño gráfico",
+    "Marketing digital y ventas",
+    "Diseño digital y web",
+    "Produccion audiovisual",
+    "Comunicación y periodismo corporativo",
+    "Animación digital y motion graphics",
+    "IRL y experiencias en vivo",
+    "Producción gráfica y publicitaria",
+    "Podcast y producción de contenido sonoro"
+];
+---
+
+<Layout title={`${articleData.title} - Blog Qoribex`}>
+
+    <!-- NAVBAR COMPONENT -->
+    <Navbar />
+
+    <main class="bg-white pb-20 pt-24">
+
+        <!-- HERO -->
+        <header class="relative w-full bg-gray-100 flex items-center justify-center py-10 md:py-0">
+            <div class="container mx-auto px-4">
+                <Image
+                        src={imgHero}
+                        alt="Portada Artículo"
+                        class="w-full h-auto max-h-[80vh] object-contain mx-auto rounded-3xl shadow-lg"
+                />
+            </div>
+        </header>
+
+        <!-- CABECERA -->
+        <div class="container mx-auto px-4 md:px-6 py-12 max-w-4xl text-center">
+            <span class="bg-yellow-400 text-[#1F23A3] font-bold px-4 py-1 rounded-full text-sm uppercase tracking-wider mb-6 inline-block shadow-md">
+                {articleData.category}
+            </span>
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-[#1F23A3] leading-tight mb-6">
+                {articleData.title}
+            </h1>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-gray-500 font-medium text-sm md:text-base border-b border-gray-100 pb-8">
+                <div class="flex items-center gap-2">
+                    <span class="text-[#1F23A3] font-bold">Autor:</span> {articleData.author}
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-[#1F23A3] font-bold">Fecha:</span> {articleData.date}
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENIDO -->
+        <article class="container mx-auto px-4 md:px-6 max-w-6xl space-y-24 text-lg text-gray-700 leading-relaxed">
+
+            <!-- SECCIÓN 1 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold text-[#1F23A3]">Introducción al grid</h2>
+                    <p class="text-xl font-medium text-[#1F23A3] italic border-l-4 border-yellow-400 pl-4">
+                        El momento en que descubres que el diseño, no es magia... es estructura.
+                    </p>
+                    <p>
+                        Alguna vez seguramente viste una marca que te hizo pensar: <strong>"Wow, esto se siente profesional"</strong>, incluso cuando no sabías exactamente por qué. No fue el color. No fue la tipografía. No fue el logo.
+                    </p>
+                    <p>
+                        Fue algo más profundo: fue la <strong class="text-[#1F23A3]">composición</strong>.
+                    </p>
+                    <p>
+                        Y la composición, aunque la mayoría no lo note, nace de un sistema que ordena todo lo que ves: <strong>el grid.</strong>
+                    </p>
+                </div>
+                <div class="relative w-full">
+                    <Image src={imgBody1} alt="Ejemplo de Grid 1" class="w-full h-auto rounded-3xl shadow-xl hover:scale-[1.02] transition-transform duration-500" />
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative w-full order-2 lg:order-1">
+                    <Image src={imgBody2} alt="Ejemplo de Grid 2" class="w-full h-auto rounded-3xl shadow-xl hover:scale-[1.02] transition-transform duration-500" />
+                </div>
+                <div class="space-y-6 order-1 lg:order-2">
+                    <p>
+                        Cuando un emprendedor siente que su marca está "casi bien pero no del todo", o cuando un diseñador siente que su pieza luce bonita, pero no sólida... es muy probable que lo que falte no sea creatividad, sino <strong>estructura</strong>.
+                    </p>
+                    <p>
+                        La verdad es simple: el público no solo mira tu marca, la interpreta, y el grid le da un camino claro para interpretarla de forma correcta.
+                    </p>
+                    <div class="bg-blue-50 p-6 rounded-2xl">
+                        <p class="mb-4">
+                            El grid es ese conjunto de líneas imaginarias que organiza tu composición, define alineaciones, crea ritmos visuales, establece jerarquías y da consistencia.
+                        </p>
+                        <p class="font-bold text-[#1F23A3] mb-0">
+                            Cuando está, lo notas. Cuando no está, lo sientes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-[#1F23A3]">Un buen grid:</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-yellow-400 font-bold text-xl">✓</span>
+                            <span>Evita diseños caóticos.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-yellow-400 font-bold text-xl">✓</span>
+                            <span>Hace que tu marca se vea profesional.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-yellow-400 font-bold text-xl">✓</span>
+                            <span>Organiza la información sin esfuerzo.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-yellow-400 font-bold text-xl">✓</span>
+                            <span>Da coherencia sin importar cuántas piezas crees.</span>
+                        </li>
+                    </ul>
+
+                    <h3 class="text-2xl font-bold text-[#1F23A3] pt-4">Porque esta historia empieza aquí...</h3>
+                    <p>
+                        Antes de hablar de tipos de grid, branding o guías prácticas, necesitas entender esto:
+                    </p>
+                    <p class="font-medium text-gray-900">
+                        El grid es la base de toda percepción visual. Cuando el grid funciona, tu audiencia siente claridad, orden y confianza. Cuando no, siente ruido, confusión y amateurismo... aunque el diseño "se vea bonito".
+                    </p>
+                </div>
+                <div class="relative w-full">
+                    <Image src={imgBody3} alt="Ejemplo de Grid 3" class="w-full h-auto rounded-3xl shadow-xl hover:scale-[1.02] transition-transform duration-500" />
+                </div>
+            </div>
+
+            <!-- CIERRE -->
+            <div class="max-w-4xl mx-auto text-center mt-16 p-8 md:p-12 bg-[#1F23A3] text-white rounded-3xl shadow-2xl">
+                <p class="text-lg md:text-xl font-medium leading-relaxed">
+                    Si alguna vez sentiste que tu marca "no termina de conectar visualmente", la <strong>Parte 2</strong> te abrirá el backstage del diseño: cómo el grid cambia la percepción que tu audiencia tiene de tu marca sin que siquiera se dé cuenta.
+                </p>
+            </div>
+
+        </article>
+
+        <!-- NAVEGACIÓN -->
+        <section class="container mx-auto px-4 md:px-6 py-20 max-w-4xl">
+            <div class="flex justify-between items-center text-[#1F23A3] font-bold">
+                <a href="/blog" class="flex items-center gap-2 hover:text-yellow-500 transition-colors px-6 py-3 rounded-full hover:bg-gray-100">
+                    ← Volver al Blog
+                </a>
+                <span class="flex items-center gap-2 text-gray-400 cursor-not-allowed">
+                    Siguiente Parte (Pronto) →
+                </span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contacto" class="bg-[#1F23A3] text-white pt-20 pb-10 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-30"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 mb-20 border-b border-white/10 pb-16">
+                <div class="space-y-8">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">¿Hablamos de tu <br><span class="text-yellow-400">próximo proyecto?</span></h2>
+                    <p class="text-blue-100 text-lg max-w-md leading-relaxed">Estamos listos para llevar tu marca al siguiente nivel.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="mailto:hola@qoribex.com" class="inline-flex items-center justify-center gap-3 bg-yellow-400 text-[#1F23A3] px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-all shadow-lg hover:-translate-y-1"><span>👋</span> hola@qoribex.com</a>
+                        <a href="https://wa.me/51999999999" class="inline-flex items-center justify-center gap-3 border border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#1F23A3] transition-all group">
+                            <Image src={logoWa} alt="WhatsApp" class="w-6 h-6 object-contain brightness-0 invert group-hover:invert-0 transition-all" /> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:pl-12">
+                    <div>
+                        <h4 class="text-yellow-400 font-bold mb-6 text-sm tracking-widest uppercase">Servicios</h4>
+                        <ul class="text-blue-100 space-y-3 text-sm">
+                            {serviciosFooter.map((servicio) => (
+                                    <li class="hover:text-white transition-colors cursor-default">• {servicio}</li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-yellow-400 font-bold mb-6 text-sm tracking-widest uppercase">Síguenos</h4>
+                        <div class="flex gap-4 flex-wrap">
+                            <a href="https://www.facebook.com/superinka" target="_blank" class="group bg-white p-2 rounded-full transition-all hover:scale-110 flex items-center justify-center w-10 h-10 hover:bg-yellow-400">
+                                <Image src={logoFb} alt="Facebook" class="w-full h-full object-contain" />
+                            </a>
+                            <a href="https://www.instagram.com/qoribex/" target="_blank" class="group bg-white p-2 rounded-full transition-all hover:scale-110 flex items-center justify-center w-10 h-10 hover:bg-yellow-400">
+                                <Image src={logoIg} alt="Instagram" class="w-full h-full object-contain rounded-full" />
+                            </a>
+                            <a href="https://www.linkedin.com/company/qoribex" target="_blank" class="group bg-white p-2 rounded-full transition-all hover:scale-110 flex items-center justify-center w-10 h-10 hover:bg-yellow-400">
+                                <Image src={logoLi} alt="LinkedIn" class="w-full h-full object-contain" />
+                            </a>
+                            <a href="https://x.com/Qoribex" target="_blank" class="group bg-white p-2 rounded-full transition-all hover:scale-110 flex items-center justify-center w-10 h-10 hover:bg-yellow-400">
+                                <Image src={logoX} alt="X" class="w-full h-full object-contain" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-blue-300/60 gap-4">
+                <p>&copy; {new Date().getFullYear()} Qoribex Agencia Digital.</p>
+            </div>
+        </div>
+    </footer>
+
+</Layout>

@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import { Image } from 'astro:assets';
+import '../../styles/home.css';
+
+// Activos
+import logoWa from '../../assets/logos/logo-whatsapp.png';
+import mainImage from '../../assets/portafolio/arte-blog.png'; // Imagen Principal
+
+const contactUrl = "https://wa.me/51999999999?text=Hola,%20vi%20su%20portafolio%20de%20Arte%20Blog%20y%20me%20interesa";
+---
+
+<Layout title="Arte Blog - Portafolio Qoribex">
+    <Navbar />
+
+    <main class="pt-24 pb-20 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6 max-w-5xl">
+
+            <!-- Encabezado Simple -->
+            <div class="text-center mb-12 animate-fade-in-up">
+                <span class="bg-[#1F23A3] text-white px-4 py-1 rounded-full text-sm font-bold tracking-wider mb-4 inline-block">PORTAFOLIO</span>
+                <h1 class="text-4xl md:text-6xl font-black text-[#1F23A3]">ARTE BLOG</h1>
+            </div>
+
+            <!-- Imagen Principal -->
+            <div class="rounded-3xl overflow-hidden shadow-2xl mb-12 bg-white animate-fade-in-up" style="animation-delay: 0.2s;">
+                <Image src={mainImage} alt="Arte Blog Qoribex" class="w-full h-auto object-cover" />
+            </div>
+
+            <!-- CTA / Contacto -->
+            <div class="bg-white rounded-3xl p-8 md:p-12 text-center shadow-lg border border-gray-100 animate-fade-in-up" style="animation-delay: 0.4s;">
+                <h2 class="text-2xl md:text-4xl font-bold text-[#1F23A3] mb-8 leading-tight">
+                    ¿Quieres que tu marca se vea igual <br>
+                    de <span class="text-yellow-500">dinámica y estratégica</span>?
+                </h2>
+
+                <a href={contactUrl} target="_blank" class="inline-flex items-center gap-3 bg-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 transition-all hover:scale-105 shadow-xl group">
+                    <Image src={logoWa} alt="WhatsApp" class="w-6 h-6 brightness-0 invert" />
+                    Contáctanos
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-[#1F23A3] text-white py-10 text-center">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Qoribex Agencia Digital.</p>
+        </div>
+    </footer>
+</Layout>

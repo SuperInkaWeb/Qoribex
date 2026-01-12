@@ -1,0 +1,115 @@
+/* =========================================
+   ESTILOS GENERALES Y UTILIDADES
+   ========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hamburguesa Animada */
+.menu-open .hamburger-icon span:nth-child(1) {
+    transform: rotate(45deg) translateY(6px);
+}
+.menu-open .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.menu-open .hamburger-icon span:nth-child(3) {
+    width: 100%;
+    transform: rotate(-45deg) translateY(-6px);
+}
+
+/* Ocultar Scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Accesibilidad */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #facc15;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =========================================
+   ANIMACIONES
+   ========================================= */
+
+/* Estrellas Portafolio */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+            radial-gradient(2px 2px at 20px 30px, white, transparent),
+            radial-gradient(2px 2px at 40px 70px, white, transparent),
+            radial-gradient(2px 2px at 50px 160px, white, transparent),
+            radial-gradient(2px 2px at 90px 40px, white, transparent),
+            radial-gradient(2px 2px at 130px 80px, white, transparent);
+    background-size: 200px 200px;
+    animation: stars 4s linear infinite;
+}
+
+@keyframes stars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-200px); }
+}
+
+/* Marquee Clientes (Scroll Infinito) */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+    animation: scroll 30s linear infinite;
+}
+
+/* Blobs de Fondo */
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+
+/* Fade In Up */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

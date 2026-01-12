@@ -1,0 +1,125 @@
+---
+import { Image } from 'astro:assets';
+import logoImg from '../assets/logos/logo-principal.png';
+---
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full z-50 transition-all duration-300 transform translate-y-0" id="navbar">
+    <div class="absolute inset-0 bg-[#1F23A3]/95 backdrop-blur-md shadow-lg transition-opacity duration-300"></div>
+
+    <div class="container mx-auto px-4 md:px-6 py-2 relative z-10 flex justify-between items-center h-20 md:h-24">
+        <!-- LOGO -->
+        <a href="/" class="h-16 md:h-24 w-auto hover:opacity-90 transition block flex-shrink-0">
+            <Image src={logoImg} alt="Logo Qoribex" class="h-full w-auto object-contain" />
+        </a>
+
+        <!-- Menú Escritorio -->
+        <div class="hidden md:flex items-center gap-8 font-bold text-white text-sm lg:text-base">
+            <a href="/#servicios" class="hover:text-yellow-400 transition-colors relative group py-2">
+                Servicios
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="/blog" class="hover:text-yellow-400 transition-colors relative group py-2">
+                Blog
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="/#portafolio" class="hover:text-yellow-400 transition-colors relative group py-2">
+                Portafolio
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="/#contacto" class="bg-yellow-400 text-[#1F23A3] px-6 py-2.5 rounded-full hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/20 font-extrabold ml-4">
+                Contacto
+            </a>
+        </div>
+
+        <!-- Botón Hamburguesa -->
+        <button class="md:hidden text-white w-10 h-10 flex items-center justify-center focus:outline-none relative z-50" id="mobile-menu-btn" aria-label="Menú">
+            <div class="hamburger-icon w-7 h-6 relative flex flex-col justify-between pointer-events-none">
+                <span class="w-full h-0.5 bg-white rounded-full transition-all duration-300 origin-left"></span>
+                <span class="w-full h-0.5 bg-white rounded-full transition-all duration-300"></span>
+                <span class="w-full h-0.5 bg-white rounded-full transition-all duration-300 origin-left"></span>
+            </div>
+        </button>
+    </div>
+</nav>
+
+<!-- Menú Móvil (Fuera del Nav para pantalla completa) -->
+<div class="fixed inset-0 bg-[#1F23A3] z-[60] flex flex-col justify-center items-center gap-8 transition-all duration-500 transform translate-x-full md:hidden" id="mobile-menu">
+    <!-- Botón Cerrar (X) -->
+    <button id="close-menu" class="absolute top-6 right-6 text-white text-5xl focus:outline-none hover:text-yellow-400 transition-colors">&times;</button>
+
+    <!-- Decoración fondo -->
+    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl opacity-20 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-yellow-400 rounded-full mix-blend-overlay filter blur-3xl opacity-10 pointer-events-none"></div>
+
+    <!-- Enlaces Móviles -->
+    <a href="/#servicios" class="text-3xl font-black text-white hover:text-yellow-400 transition-colors mobile-link">Servicios</a>
+    <a href="/blog" class="text-3xl font-black text-white hover:text-yellow-400 transition-colors mobile-link">Blog</a>
+    <a href="/#portafolio" class="text-3xl font-black text-white hover:text-yellow-400 transition-colors mobile-link">Portafolio</a>
+    <a href="/#contacto" class="text-2xl font-bold bg-yellow-400 text-[#1F23A3] px-8 py-3 rounded-full hover:bg-white transition-all transform hover:scale-105 shadow-xl mobile-link mt-4">Contacto</a>
+</div>
+
+<script>
+    // Lógica encapsulada del Navbar
+    const navbar = document.getElementById('navbar');
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    let isMenuOpen = false;
+
+    // Scroll Logic
+    window.addEventListener('scroll', () => {
+        if (isMenuOpen) return;
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > 50) {
+            navbar?.classList.remove('-translate-y-full');
+            navbar?.classList.add('shadow-lg');
+        } else {
+            navbar?.classList.remove('shadow-lg');
+        }
+    }, { passive: true });
+
+    // Funciones Menu
+    function openMenu() {
+        isMenuOpen = true;
+        document.body.style.overflow = 'hidden'; // Bloquear scroll
+        menuBtn?.classList.add('menu-open');
+        mobileMenu?.classList.remove('translate-x-full');
+    }
+
+    function closeMenu() {
+        isMenuOpen = false;
+        document.body.style.overflow = ''; // Desbloquear scroll
+        menuBtn?.classList.remove('menu-open');
+        mobileMenu?.classList.add('translate-x-full');
+    }
+
+    // Event Listeners
+    menuBtn?.addEventListener('click', () => {
+        if (isMenuOpen) closeMenu();
+        else openMenu();
+    });
+
+    closeBtn?.addEventListener('click', closeMenu);
+
+    // Cerrar al clickear un enlace
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+</script>
+
+<style>
+    /* Estilos de animación Hamburguesa */
+    .menu-open .hamburger-icon span:nth-child(1) {
+        transform: rotate(45deg) translateY(6px);
+    }
+    .menu-open .hamburger-icon span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    .menu-open .hamburger-icon span:nth-child(3) {
+        width: 100%;
+        transform: rotate(-45deg) translateY(-6px);
+    }
+</style>

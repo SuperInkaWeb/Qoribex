@@ -1,0 +1,238 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+// Importamos Navbar
+import Navbar from '../components/Navbar.astro';
+
+// Importar Estilos CSS
+import '../styles/blog.css';
+
+// ==========================================
+// 1. ACTIVOS GENERALES
+// ==========================================
+import logoImg from '../assets/logos/logo-principal.png';
+import heroBlogImg from '../assets/hero/ENCABEZADO BLOG.jpg';
+
+import logoFb from '../assets/logos/logo-facebook.png';
+import logoIg from '../assets/logos/logo-instagram.jpg';
+import logoLi from '../assets/logos/logo-linkdin.png';
+import logoWa from '../assets/logos/logo-whatsapp.png';
+import logoX from '../assets/logos/logo-x.png';
+
+// ==========================================
+// 2. ARTÍCULOS
+// ==========================================
+import art1 from '../assets/blog/ARTÍCULO QORIBEX PIEZAS GRÁFICAS_Mesa de trabajo 1.png';
+import art2 from '../assets/blog/ARTÍCULO QORIBEX PIEZAS GRÁFICAS-12.png';
+import art3 from '../assets/blog/ARTÍCULO QORIBEX PIEZAS GRÁFICAS-12.png';
+
+const articulos = [
+    {
+        id: 1,
+        img: art1,
+        categoria: "Diseño Gráfico",
+        fecha: "01/01/2025",
+        autor: "Sheryl Rodriguez",
+        titulo: "El poder del grid: cómo la composición cambia la percepción de tu marca",
+        desc: "Descubre cómo el grid - el sistema invisible detrás de toda composición sólida - transforma la percepción de tu marca. Aprende por qué orden, estructura y coherencia visual pueden ser el factor decisivo entre verse \"bonito\" y verse realmente profesional.",
+        link: "/el-poder-del-grid"
+    },
+    {
+        id: 2,
+        img: art2,
+        categoria: "Marketing",
+        fecha: "05/01/2025",
+        autor: "Equipo Qoribex",
+        titulo: "Estrategias de Marketing Digital Efectivas",
+        desc: "Guía completa sobre las tendencias que marcarán la pauta en el mundo digital este año.",
+        link: "#"
+    },
+    {
+        id: 3,
+        img: art3,
+        categoria: "Tecnología",
+        fecha: "08/01/2025",
+        autor: "Equipo Qoribex",
+        titulo: "El futuro de las Aplicaciones Web",
+        desc: "Análisis sobre las nuevas tecnologías y frameworks que están revolucionando el desarrollo web.",
+        link: "#"
+    }
+];
+
+const serviciosFooter = [
+    "Branding y diseño gráfico",
+    "Marketing digital y ventas",
+    "Diseño digital y web",
+    "Produccion audiovisual",
+    "Comunicación y periodismo corporativo",
+    "Animación digital y motion graphics",
+    "IRL y experiencias en vivo",
+    "Producción gráfica y publicitaria",
+    "Podcast y producción de contenido sonoro"
+];
+---
+
+<Layout title="Blog Qoribex - Novedades y Estrategia">
+
+    <!-- NAVBAR COMPONENT -->
+    <Navbar />
+
+    <main class="pt-24 pb-20">
+
+        <!-- HERO BLOG -->
+        <section class="relative w-full h-[50vh] md:h-[70vh] bg-[#f0f0f0] overflow-hidden flex items-center justify-center">
+            <Image src={heroBlogImg} alt="Blog Qoribex" class="w-full h-full object-contain" />
+        </section>
+
+        <!-- SECCIÓN ARTÍCULOS -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 md:px-6">
+                <!-- Encabezado -->
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-[#1F23A3] mb-2">Últimos Artículos</h2>
+                        <div class="h-1 w-20 bg-yellow-400 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Slider Container -->
+                <div class="relative max-w-4xl mx-auto">
+                    <!-- Ventana del Slider -->
+                    <div class="overflow-hidden rounded-3xl shadow-xl bg-white">
+                        <div id="blog-track" class="flex transition-transform duration-700 ease-in-out">
+                            {articulos.map((art) => (
+                                    <article class="w-full flex-shrink-0 flex flex-col h-auto">
+                                        <!-- Imagen -->
+                                        <div class="w-full relative bg-gray-50 flex items-center justify-center">
+                                            <Image
+                                                    src={art.img}
+                                                    alt={art.titulo}
+                                                    class="max-w-full max-h-[50vh] w-auto h-auto object-contain mx-auto"
+                                            />
+
+                                            <div class="absolute top-4 left-4 bg-[#1F23A3] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                                                {art.categoria}
+                                            </div>
+                                        </div>
+
+                                        <!-- Contenido -->
+                                        <div class="w-full p-8 md:p-12 flex flex-col justify-center bg-white">
+                                            <div class="text-gray-400 text-sm font-medium mb-4 flex items-center gap-2">
+                                                <span class="text-[#1F23A3] font-bold">{art.autor}</span>
+                                                <span>•</span>
+                                                <span>{art.fecha}</span>
+                                            </div>
+
+                                            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                                                {art.titulo}
+                                            </h3>
+                                            <p class="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">
+                                                {art.desc}
+                                            </p>
+                                            <a href={art.link} class="inline-flex items-center font-bold text-[#1F23A3] hover:text-yellow-500 transition-colors self-start group/link">
+                                                Leer artículo completo
+                                                <span class="ml-2 transform group-hover/link:translate-x-1 transition-transform">→</span>
+                                            </a>
+                                        </div>
+                                    </article>
+                            ))}
+                        </div>
+                    </div>
+
+                    <!-- Botones de Navegación -->
+                    <button id="blog-prev" class="absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 text-[#1F23A3] flex items-center justify-center hover:bg-[#1F23A3] hover:text-white transition-all z-10">←</button>
+                    <button id="blog-next" class="absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 text-[#1F23A3] flex items-center justify-center hover:bg-[#1F23A3] hover:text-white transition-all z-10">→</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contacto" class="bg-[#1F23A3] text-white pt-20 pb-10 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-30"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 mb-20 border-b border-white/10 pb-16">
+                <div class="space-y-8">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">¿Hablamos de tu <br><span class="text-yellow-400">próximo proyecto?</span></h2>
+                    <p class="text-blue-100 text-lg max-w-md leading-relaxed">Estamos listos para llevar tu marca al siguiente nivel.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="mailto:hola@qoribex.com" class="inline-flex items-center justify-center gap-3 bg-yellow-400 text-[#1F23A3] px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-all shadow-lg hover:-translate-y-1"><span>👋</span> hola@qoribex.com</a>
+                        <a href="https://wa.me/51999999999" class="inline-flex items-center justify-center gap-3 border border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#1F23A3] transition-all group">
+                            <Image src={logoWa} alt="WhatsApp" class="w-6 h-6 object-contain brightness-0 invert group-hover:invert-0 transition-all" /> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:pl-12">
+                    <div>
+                        <h4 class="text-yellow-400 font-bold mb-6 text-sm tracking-widest uppercase">Servicios</h4>
+                        <ul class="text-blue-100 space-y-3 text-sm">
+                            {serviciosFooter.map((servicio) => (
+                                    <li class="hover:text-white transition-colors cursor-default">• {servicio}</li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-yellow-400 font-bold mb-6 text-sm tracking-widest uppercase">Síguenos</h4>
+                        <div class="flex gap-4 flex-wrap">
+                            <a href="https://www.facebook.com/superinka" target="_blank" class="group bg-white p-2 rounded-full transition-all hover:scale-110 flex items-center justify-center w-10 h-10 hover:bg-yellow-400">
+                                <Image src={logoFb} alt="Facebook" class="w-full h-full object-contain" />
+                            </a>
+                            <a href="https://www.instagram.com/qoribex/" target="_blank" class="group bg-white p-2 rounded-full transition-all hover:scale-110 flex items-center justify-center w-10 h-10 hover:bg-yellow-400">
+                                <Image src={logoIg} alt="Instagram" class="w-full h-full object-contain rounded-full" />
+                            </a>
+                            <a href="https://www.linkedin.com/company/qoribex" target="_blank" class="group bg-white p-2 rounded-full transition-all hover:scale-110 flex items-center justify-center w-10 h-10 hover:bg-yellow-400">
+                                <Image src={logoLi} alt="LinkedIn" class="w-full h-full object-contain" />
+                            </a>
+                            <a href="https://x.com/Qoribex" target="_blank" class="group bg-white p-2 rounded-full transition-all hover:scale-110 flex items-center justify-center w-10 h-10 hover:bg-yellow-400">
+                                <Image src={logoX} alt="X" class="w-full h-full object-contain" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-blue-300/60 gap-4">
+                <p>&copy; {new Date().getFullYear()} Qoribex Agencia Digital.</p>
+            </div>
+        </div>
+    </footer>
+
+</Layout>
+
+<script>
+    // SCRIPT DE BLOG (Carrusel artículos)
+    // Nota: El script del Navbar ya no es necesario aquí porque está en el componente
+    document.addEventListener('DOMContentLoaded', () => {
+        // 2. CARRUSEL DE ARTÍCULOS
+        const track = document.getElementById('blog-track');
+        const prevBtn = document.getElementById('blog-prev');
+        const nextBtn = document.getElementById('blog-next');
+
+        if (track && prevBtn && nextBtn) {
+            const totalItems = track.children.length;
+            let currentIndex = 0;
+
+            const updateSlider = () => {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            };
+
+            const nextSlide = () => {
+                currentIndex = (currentIndex + 1) % totalItems;
+                updateSlider();
+            };
+
+            const prevSlide = () => {
+                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                updateSlider();
+            };
+
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            updateSlider();
+        }
+    });
+</script>
