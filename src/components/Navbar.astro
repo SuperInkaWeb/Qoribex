@@ -15,7 +15,7 @@ import logoImg from '../assets/logos/logo-principal.png';
 
         <!-- Menú Escritorio -->
         <div class="hidden md:flex items-center gap-8 font-bold text-white text-sm lg:text-base">
-            <a href="/#servicios" class="hover:text-yellow-400 transition-colors relative group py-2">
+            <a href="#servicios" class="smooth-scroll hover:text-yellow-400 transition-colors relative group py-2">
                 Servicios
                 <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
             </a>
@@ -23,11 +23,11 @@ import logoImg from '../assets/logos/logo-principal.png';
                 Blog
                 <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="/#portafolio" class="hover:text-yellow-400 transition-colors relative group py-2">
+            <a href="#portafolio" class="smooth-scroll hover:text-yellow-400 transition-colors relative group py-2">
                 Portafolio
                 <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="/#contacto" class="bg-yellow-400 text-[#1F23A3] px-6 py-2.5 rounded-full hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/20 font-extrabold ml-4">
+            <a href="#contacto" class="smooth-scroll bg-yellow-400 text-[#1F23A3] px-6 py-2.5 rounded-full hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/20 font-extrabold ml-4">
                 Contacto
             </a>
         </div>
@@ -53,10 +53,10 @@ import logoImg from '../assets/logos/logo-principal.png';
     <div class="absolute bottom-0 left-0 w-64 h-64 bg-yellow-400 rounded-full mix-blend-overlay filter blur-3xl opacity-10 pointer-events-none"></div>
 
     <!-- Enlaces Móviles -->
-    <a href="/#servicios" class="text-3xl font-black text-white hover:text-yellow-400 transition-colors mobile-link">Servicios</a>
+    <a href="#servicios" class="smooth-scroll text-3xl font-black text-white hover:text-yellow-400 transition-colors mobile-link">Servicios</a>
     <a href="/blog" class="text-3xl font-black text-white hover:text-yellow-400 transition-colors mobile-link">Blog</a>
-    <a href="/#portafolio" class="text-3xl font-black text-white hover:text-yellow-400 transition-colors mobile-link">Portafolio</a>
-    <a href="/#contacto" class="text-2xl font-bold bg-yellow-400 text-[#1F23A3] px-8 py-3 rounded-full hover:bg-white transition-all transform hover:scale-105 shadow-xl mobile-link mt-4">Contacto</a>
+    <a href="#portafolio" class="smooth-scroll text-3xl font-black text-white hover:text-yellow-400 transition-colors mobile-link">Portafolio</a>
+    <a href="#contacto" class="smooth-scroll text-2xl font-bold bg-yellow-400 text-[#1F23A3] px-8 py-3 rounded-full hover:bg-white transition-all transform hover:scale-105 shadow-xl mobile-link mt-4">Contacto</a>
 </div>
 
 <script>
@@ -83,14 +83,14 @@ import logoImg from '../assets/logos/logo-principal.png';
     // Funciones Menu
     function openMenu() {
         isMenuOpen = true;
-        document.body.style.overflow = 'hidden'; // Bloquear scroll
+        document.body.style.overflow = 'hidden'; 
         menuBtn?.classList.add('menu-open');
         mobileMenu?.classList.remove('translate-x-full');
     }
 
     function closeMenu() {
         isMenuOpen = false;
-        document.body.style.overflow = ''; // Desbloquear scroll
+        document.body.style.overflow = ''; 
         menuBtn?.classList.remove('menu-open');
         mobileMenu?.classList.add('translate-x-full');
     }
@@ -107,6 +107,39 @@ import logoImg from '../assets/logos/logo-principal.png';
     mobileLinks.forEach(link => {
         link.addEventListener('click', closeMenu);
     });
+
+    // Smooth Scroll Custom Script (Sin advertencias de TypeScript)
+    const smoothLinks = document.querySelectorAll('.smooth-scroll');
+    
+    smoothLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Se usa currentTarget en lugar de 'this'
+            const currentElement = e.currentTarget;
+            if (!(currentElement instanceof HTMLAnchorElement)) return;
+            
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                e.preventDefault(); 
+                
+                const targetId = currentElement.getAttribute('href')?.substring(1);
+                if (!targetId) return;
+                
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    const navbarHeight = navbar ? navbar.offsetHeight : 96;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            } else {
+                window.location.href = '/' + (currentElement.getAttribute('href') || '');
+            }
+        });
+    });
 </script>
 
 <style>
@@ -121,5 +154,10 @@ import logoImg from '../assets/logos/logo-principal.png';
     .menu-open .hamburger-icon span:nth-child(3) {
         width: 100%;
         transform: rotate(-45deg) translateY(-6px);
+    }
+    
+    /* Configuración de desplazamiento nativa */
+    html {
+        scroll-behavior: smooth;
     }
 </style>

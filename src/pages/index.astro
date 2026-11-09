@@ -11,22 +11,16 @@ import '../styles/home.css';
 // 1. IMPORTACIÓN DE ACTIVOS
 // ==========================================
 import heroImg from '../assets/hero-image.png';
-// Logo ya no se necesita aquí porque está en el componente Navbar
 
 // Redes Sociales (Assets)
 import logoFb from '../assets/logos/logo-facebook.png';
 import logoIg from '../assets/logos/logo-instagram.jpg';
 import logoLi from '../assets/logos/logo-linkdin.png';
-import logoWa from '../assets/logos/logo-whatsapp.png';
 import logoX from '../assets/logos/logo-x.png';
 
-// Banner WhatsApp
-import bannerWhatsapp from '../assets/banner-contactanos.png';
-
 // ==========================================
-// 2. DATOS
+// 2. DATOS DE SERVICIOS
 // ==========================================
-
 import serv8 from '../assets/servicios/animacion-digital.jpg';
 import serv9 from '../assets/servicios/comunicacion-periodismo-corporativo.jpg';
 import serv10 from '../assets/servicios/diseno-grafico.jpg';
@@ -61,6 +55,9 @@ const serviciosFooter = [
     "Podcast y producción de contenido sonoro"
 ];
 
+// ==========================================
+// 3. DATOS DE CLIENTES Y PORTAFOLIO
+// ==========================================
 import cli17 from '../assets/clientes/QORIBEX-17.jpg';
 import cli18 from '../assets/clientes/QORIBEX-18.jpg';
 import cli19 from '../assets/clientes/QORIBEX-19.jpg';
@@ -80,36 +77,39 @@ import portGraficas from '../assets/portafolio/QORIBEX piezas gráficas-04.png';
 import portReels from '../assets/portafolio/QORIBEX reels-04.png';
 
 const portfolioItems = [
-    {
-        img: portHistorias,
-        title: "Historias",
-        desc: "Storytelling visual",
-        link: "#" // Sin página específica aún
-    },
-    {
-        img: portPortadas,
-        title: "Portadas Mensuales",
-        desc: "Diseño editorial",
-        link: "/portafolio/portadas-mensuales" // Nuevo Link
-    },
-    {
-        img: portArte,
-        title: "Arte Blog",
-        desc: "Ilustración digital",
-        link: "/portafolio/arte-blog" // Nuevo Link
-    },
-    {
-        img: portGraficas,
-        title: "Piezas Gráficas",
-        desc: "Branding",
-        link: "#" // Sin página específica aún
-    },
-    {
-        img: portReels,
-        title: "Reels",
-        desc: "Edición dinámica",
-        link: "/portafolio/reels" // Nuevo Link
-    },
+    { img: portHistorias, title: "Historias", desc: "Storytelling visual", link: "#" },
+    { img: portPortadas, title: "Portadas Mensuales", desc: "Diseño editorial", link: "/portafolio/portadas-mensuales" },
+    { img: portArte, title: "Arte Blog", desc: "Ilustración digital", link: "/portafolio/arte-blog" },
+    { img: portGraficas, title: "Piezas Gráficas", desc: "Branding", link: "#" },
+    { img: portReels, title: "Reels", desc: "Edición dinámica", link: "/portafolio/reels" },
+];
+
+// ==========================================
+// 4. DATOS ESTÁTICOS DE PAÍSES (OPTIMIZADO)
+// ==========================================
+const paises = [
+    { code: 'EC', prefix: '+593', name: 'Ecuador', flag: '🇪🇨' },
+    { code: 'AR', prefix: '+54', name: 'Argentina', flag: '🇦🇷' },
+    { code: 'BO', prefix: '+591', name: 'Bolivia', flag: '🇧🇴' },
+    { code: 'BR', prefix: '+55', name: 'Brasil', flag: '🇧🇷' },
+    { code: 'CA', prefix: '+1', name: 'Canadá', flag: '🇨🇦' },
+    { code: 'CL', prefix: '+56', name: 'Chile', flag: '🇨🇱' },
+    { code: 'CO', prefix: '+57', name: 'Colombia', flag: '🇨🇴' },
+    { code: 'CR', prefix: '+506', name: 'Costa Rica', flag: '🇨🇷' },
+    { code: 'CU', prefix: '+53', name: 'Cuba', flag: '🇨🇺' },
+    { code: 'SV', prefix: '+503', name: 'El Salvador', flag: '🇸🇻' },
+    { code: 'ES', prefix: '+34', name: 'España', flag: '🇪🇸' },
+    { code: 'US', prefix: '+1', name: 'Estados Unidos', flag: '🇺🇸' },
+    { code: 'GT', prefix: '+502', name: 'Guatemala', flag: '🇬🇹' },
+    { code: 'HN', prefix: '+504', name: 'Honduras', flag: '🇭🇳' },
+    { code: 'MX', prefix: '+52', name: 'México', flag: '🇲🇽' },
+    { code: 'NI', prefix: '+505', name: 'Nicaragua', flag: '🇳🇮' },
+    { code: 'PA', prefix: '+507', name: 'Panamá', flag: '🇵🇦' },
+    { code: 'PY', prefix: '+595', name: 'Paraguay', flag: '🇵🇾' },
+    { code: 'PE', prefix: '+51', name: 'Perú', flag: '🇵🇪' },
+    { code: 'DO', prefix: '+1', name: 'Rep. Dominicana', flag: '🇩🇴' },
+    { code: 'UY', prefix: '+598', name: 'Uruguay', flag: '🇺🇾' },
+    { code: 'VE', prefix: '+58', name: 'Venezuela', flag: '🇻🇪' }
 ];
 ---
 
@@ -154,10 +154,10 @@ const portfolioItems = [
                         Transformamos tus ideas en experiencias digitales que conectan, impactan y venden.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center md:justify-start">
-                        <a href="#servicios" class="group bg-[#1F23A3] text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-800 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-3 text-base">
+                        <a href="#servicios" class="smooth-scroll group bg-[#1F23A3] text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-800 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-3 text-base">
                             Ver Servicios <span>↓</span>
                         </a>
-                        <a href="#portafolio" class="group border-2 border-[#1F23A3] text-[#1F23A3] px-8 py-4 rounded-xl font-bold hover:bg-[#1F23A3] hover:text-white transition-all duration-300 text-base text-center bg-white/50 backdrop-blur-sm flex items-center justify-center gap-2">
+                        <a href="#portafolio" class="smooth-scroll group border-2 border-[#1F23A3] text-[#1F23A3] px-8 py-4 rounded-xl font-bold hover:bg-[#1F23A3] hover:text-white transition-all duration-300 text-base text-center bg-white/50 backdrop-blur-sm flex items-center justify-center gap-2">
                             Nuestro Trabajo <span>→</span>
                         </a>
                     </div>
@@ -212,22 +212,86 @@ const portfolioItems = [
         <section id="servicios" class="py-20 md:py-32 bg-gray-50 relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#1F23A3]/20 to-transparent"></div>
             <div class="container mx-auto px-4 md:px-6 relative z-10">
-                <div class="text-center mb-16 md:mb-20">
+                
+                <div class="text-center mb-16 md:mb-24">
                     <span class="text-yellow-500 font-bold tracking-widest text-sm uppercase">Lo que hacemos</span>
-                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black text-[#1F23A3] mt-3">NUESTROS SERVICIOS</h2>
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black text-[#1F23A3] mt-3 tracking-tight">NUESTRAS UNIDADES DE NEGOCIO</h2>
+                    <p class="text-gray-600 mt-6 max-w-3xl mx-auto text-lg md:text-xl">Hemos estructurado nuestros servicios en <strong class="text-[#1F23A3]">3 áreas especializadas</strong> para resolver problemas reales, explorar oportunidades y construir soluciones viables.</p>
+                    
+                    <!-- UX: Índice visual de las 3 áreas -->
+                    <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8">
+                        <a href="#unidad-digital" class="smooth-scroll bg-[#1F23A3]/10 text-[#1F23A3] font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full hover:bg-[#1F23A3] hover:text-white transition-all duration-300 shadow-sm flex items-center gap-2 text-sm sm:text-base border border-[#1F23A3]/20">
+                            <span class="bg-white rounded-full w-6 h-6 flex items-center justify-center text-[#1F23A3] text-sm">1</span> Digital
+                        </a>
+                        <a href="#unidad-future" class="smooth-scroll bg-yellow-100 text-yellow-800 font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full hover:bg-yellow-400 hover:text-[#1F23A3] transition-all duration-300 shadow-sm flex items-center gap-2 text-sm sm:text-base border border-yellow-200">
+                            <span class="bg-white rounded-full w-6 h-6 flex items-center justify-center text-yellow-600 text-sm">2</span> Future Systems
+                        </a>
+                        <a href="#unidad-robotics" class="smooth-scroll bg-gray-200 text-gray-800 font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-sm flex items-center gap-2 text-sm sm:text-base border border-gray-300">
+                            <span class="bg-white rounded-full w-6 h-6 flex items-center justify-center text-gray-800 text-sm">3</span> Robotics & Mechatronics
+                        </a>
+                    </div>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    {servicios.map((item) => (
-                            <a href={item.link} class="group relative overflow-hidden rounded-2xl block hover:-translate-y-2 transition-all duration-300 shadow-md hover:shadow-xl">
-                                <Image
-                                        src={item.img}
-                                        alt={item.title}
-                                        class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-                                />
-                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+
+                <!-- 1. Qoribex Digital -->
+                <div id="unidad-digital" class="mb-24 scroll-mt-28">
+                    <div class="mb-10 text-center md:text-left border-l-4 border-[#1F23A3] pl-4 md:pl-6 max-w-3xl mx-auto md:mx-0">
+                        <h3 class="text-3xl font-black text-[#1F23A3] mb-2">Qoribex Digital</h3>
+                        <p class="text-gray-600 font-medium text-lg md:text-xl">¿Cómo comunicamos mejor y construimos oportunidades comerciales?</p>
+                        <p class="text-gray-500 mt-2">Marketing, presencia, comunicación y soluciones digitales.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                        {servicios.filter(s => ["Diseño digital y web", "Marketing digital y ventas", "Animación digital y motion graphics", "Podcast y producción de contenido sonoro", "Producción audiovisual"].includes(s.title)).map((item) => (
+                            <a href={item.link} class="group relative overflow-hidden rounded-2xl block shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white">
+                                <Image src={item.img} alt={item.title} class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+                                <div class="absolute inset-0 bg-[#1F23A3]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-10">
+                                    <h4 class="text-white font-bold text-xl md:text-2xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 leading-tight">{item.title}</h4>
+                                </div>
                             </a>
-                    ))}
+                        ))}
+                    </div>
                 </div>
+
+                <!-- 2. Qoribex Future Systems -->
+                <div id="unidad-future" class="mb-24 scroll-mt-28">
+                    <div class="mb-10 text-center md:text-left border-l-4 border-[#1F23A3] pl-4 md:pl-6 max-w-3xl mx-auto md:mx-0">
+                        <h3 class="text-3xl font-black text-[#1F23A3] mb-2">Qoribex Future Systems</h3>
+                        <p class="text-gray-600 font-medium text-lg md:text-xl">¿Qué debemos transformar, diseñar o validar?</p>
+                        <p class="text-gray-500 mt-2">Estrategia, innovación, nuevos negocios y transformación corporativa.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                        {servicios.filter(s => ["Branding y diseño gráfico", "Comunicación y periodismo corporativo"].includes(s.title)).map((item) => (
+                            <a href={item.link} class="group relative overflow-hidden rounded-2xl block shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white">
+                                <Image src={item.img} alt={item.title} class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+                                <div class="absolute inset-0 bg-[#1F23A3]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-10">
+                                    <h4 class="text-white font-bold text-xl md:text-2xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 leading-tight">{item.title}</h4>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+
+                <!-- 3. Qoribex Robotics & Mechatronics -->
+                <div id="unidad-robotics" class="scroll-mt-28">
+                    <div class="mb-10 text-center md:text-left border-l-4 border-[#1F23A3] pl-4 md:pl-6 max-w-3xl mx-auto md:mx-0">
+                        <h3 class="text-3xl font-black text-[#1F23A3] mb-2">Qoribex Robotics & Mechatronics</h3>
+                        <p class="text-gray-600 font-medium text-lg md:text-xl">¿Cómo evaluamos una solución que interactúa con el mundo físico?</p>
+                        <p class="text-gray-500 mt-2">Robótica, electrónica, sensores, control e integración física-digital.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                        {servicios.filter(s => ["IRL y experiencias en vivo", "Producción gráfica y publicitaria"].includes(s.title)).map((item) => (
+                            <a href={item.link} class="group relative overflow-hidden rounded-2xl block shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white">
+                                <Image src={item.img} alt={item.title} class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+                                <div class="absolute inset-0 bg-[#1F23A3]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-10">
+                                    <h4 class="text-white font-bold text-xl md:text-2xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 leading-tight">{item.title}</h4>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -295,64 +359,121 @@ const portfolioItems = [
             </div>
         </section>
 
-        <!-- BANNER WHATSAPP -->
-        <section class="w-full bg-white overflow-hidden py-12 md:py-20">
-            <div class="container mx-auto px-4 md:px-6">
-                <a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer" class="block w-full">
-                    <div class="w-full h-auto relative overflow-hidden rounded-3xl">
-                        <Image src={bannerWhatsapp} alt="Contáctanos por WhatsApp" class="w-full h-auto object-cover" />
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <!-- FOOTER -->
+        <!-- FOOTER (CON LAYOUT BALANCEADO Y SELECTOR DE PAÍSES) -->
         <footer id="contacto" class="bg-[#1F23A3] text-white pt-20 pb-10 relative overflow-hidden">
+            <!-- Efectos de fondo originales -->
             <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-30 animate-pulse"></div>
             <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20"></div>
 
-            <div class="container mx-auto px-4 md:px-6 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 mb-20 border-b border-white/10 pb-16">
-                    <div class="space-y-8">
-                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">¿Hablamos de tu <br><span class="text-yellow-400">próximo proyecto?</span></h2>
-                        <p class="text-blue-100 text-lg max-w-md leading-relaxed">Estamos listos para llevar tu marca al siguiente nivel. Escríbenos y hagamos magia juntos.</p>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="mailto:hola@qoribex.com" class="inline-flex items-center justify-center gap-3 bg-yellow-400 text-[#1F23A3] px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 shadow-lg hover:shadow-yellow-400/20 hover:-translate-y-1"><span>👋</span> hola@qoribex.com</a>
-                            <a href="https://wa.me/51999999999" class="inline-flex items-center justify-center gap-3 border border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#1F23A3] transition-all duration-300 group">
-                                <Image src={logoWa} alt="WhatsApp" class="w-6 h-6 object-contain brightness-0 invert group-hover:invert-0 transition-all duration-300" /> WhatsApp
-                            </a>
+            <div class="container mx-auto px-4 md:px-6 relative z-10 max-w-7xl">
+                <!-- Layout balanceado (5/12 para form y 7/12 para info) -->
+                <div class="flex flex-col lg:flex-row gap-12 md:gap-20 mb-20 border-b border-white/10 pb-16">
+                    
+                    <!-- Lado Izquierdo: Formularios de Contacto (HU3) -->
+                    <div class="w-full lg:w-5/12 space-y-8">
+                        <div>
+                            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">¿Hablamos de tu <br><span class="text-yellow-400">próximo proyecto?</span></h2>
+                            <p class="text-blue-100 text-lg mt-4 max-w-md leading-relaxed">Déjanos tus datos y nos pondremos en contacto contigo lo antes posible para hacer magia juntos.</p>
                         </div>
+                        
+                        <!-- Formulario de Captura de Datos -->
+                       <form id="contactForm" class="bg-white/5 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/10 space-y-4 w-full">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-blue-100 mb-1">Nombre Completo</label>
+                                <input type="text" id="name" name="name" required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-blue-200/50 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition-colors" placeholder="Ej. Juan Pérez">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-blue-100 mb-1">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-blue-200/50 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition-colors" placeholder="juan@ejemplo.com">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-blue-100 mb-1">Número de Teléfono</label>
+                                <div class="flex gap-2">
+                                    <select id="countryCode" name="countryCode" class="w-[120px] flex-shrink-0 bg-white/10 border border-white/20 rounded-lg px-2 py-3 text-white focus:outline-none focus:border-yellow-400 [&>option]:text-black transition-colors appearance-none text-center">
+                                        {paises.map((pais, index) => (
+                                            <option value={pais.prefix} selected={index === 0}>
+                                                {pais.flag} {pais.prefix}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <input type="tel" id="phone" name="phone" required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-blue-200/50 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition-colors" placeholder="99 999 9999">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-blue-100 mb-1">Servicio de Interés</label>
+                                <select id="service" name="service" required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-400 [&>option]:text-black transition-colors appearance-none">
+                                    <option value="" disabled selected>Selecciona un servicio...</option>
+                                    {serviciosFooter.map((servicio) => (
+                                        <option value={servicio}>{servicio}</option>
+                                    ))}
+                                </select>
+                            </div>
+                            
+                            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                                <button type="submit" name="contactMethod" value="whatsapp" class="flex-1 bg-[#25D366] text-white font-bold text-base py-3.5 px-4 rounded-lg hover:bg-white hover:text-[#25D366] transition-all duration-300 shadow-lg hover:shadow-[#25D366]/20 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                                    <span class="text-xl">💬</span> WhatsApp
+                                </button>
+                                <button type="submit" name="contactMethod" value="email" class="flex-1 bg-yellow-400 text-[#1F23A3] font-bold text-base py-3.5 px-4 rounded-lg hover:bg-white transition-all duration-300 shadow-lg hover:shadow-yellow-400/20 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                                    <span class="text-xl">✉️</span> Correo
+                                </button>
+                            </div>
+                        </form>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:pl-12">
-                        <div>
-                            <h4 class="text-yellow-400 font-bold mb-6 text-sm tracking-widest uppercase">Servicios</h4>
-                            <ul class="text-blue-100 space-y-3 text-sm">
-                                {serviciosFooter.map((servicio) => (
-                                        <li class="hover:text-white transition-colors cursor-default">• {servicio}</li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-yellow-400 font-bold mb-6 text-sm tracking-widest uppercase">Síguenos</h4>
-                            <div class="flex gap-4 flex-wrap">
-                                <a href="https://www.facebook.com/superinka" target="_blank" rel="noopener noreferrer" class="group bg-white p-2 rounded-full transition-all duration-300 hover:scale-110 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 hover:bg-yellow-400 text-white">
-                                    <Image src={logoFb} alt="Facebook" class="w-full h-full object-contain" />
-                                </a>
-                                <a href="https://www.instagram.com/qoribex/" target="_blank" rel="noopener noreferrer" class="group bg-white p-2 rounded-full transition-all duration-300 hover:scale-110 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 hover:bg-yellow-400 text-white">
-                                    <Image src={logoIg} alt="Instagram" class="w-full h-full object-contain rounded-full" />
-                                </a>
-                                <a href="https://www.linkedin.com/company/qoribex" target="_blank" rel="noopener noreferrer" class="group bg-white p-2 rounded-full transition-all duration-300 hover:scale-110 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 hover:bg-yellow-400 text-white">
-                                    <Image src={logoLi} alt="LinkedIn" class="w-full h-full object-contain" />
-                                </a>
-                                <a href="https://x.com/Qoribex" target="_blank" rel="noopener noreferrer" class="group bg-white p-2 rounded-full transition-all duration-300 hover:scale-110 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 hover:bg-yellow-400 text-white">
-                                    <Image src={logoX} alt="X" class="w-full h-full object-contain" />
-                                </a>
+                    <!-- Lado Derecho: Info Corporativa Espaciada -->
+                    <div class="w-full lg:w-7/12 flex flex-col justify-between lg:pl-16 lg:pt-8 h-full mt-12 lg:mt-0">
+                        
+                        <div class="space-y-14">
+                            <!-- Contacto Directo -->
+                            <div>
+                                <h4 class="text-yellow-400 font-bold mb-4 text-sm tracking-widest uppercase">Atención Directa</h4>
+                                <div class="flex flex-col gap-4">
+                                    <a href="mailto:hola@qoribex.com" class="inline-flex items-center gap-4 text-blue-100 hover:text-yellow-400 transition-colors text-lg group w-max">
+                                        <span class="bg-white/10 w-12 h-12 flex items-center justify-center rounded-full group-hover:bg-yellow-400 group-hover:text-[#1F23A3] transition-colors">✉️</span> 
+                                        hola@qoribex.com
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Lista de Servicios -->
+                            <div>
+                                <h4 class="text-yellow-400 font-bold mb-6 text-sm tracking-widest uppercase">Servicios</h4>
+                                <ul class="text-blue-100 space-y-4 text-sm md:text-base grid grid-cols-1 sm:grid-cols-2 gap-x-8">
+                                    {serviciosFooter.map((servicio) => (
+                                        <li class="hover:text-white transition-colors cursor-default flex items-start gap-2">
+                                            <span class="text-yellow-400 mt-1">•</span>
+                                            <span class="leading-tight">{servicio}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            
+                            <!-- Redes Sociales rediseñadas -->
+                            <div>
+                                <h4 class="text-yellow-400 font-bold mb-6 text-sm tracking-widest uppercase">Síguenos</h4>
+                                <div class="flex gap-5 flex-wrap">
+                                    <a href="https://www.facebook.com/superinka" target="_blank" rel="noopener noreferrer" class="group bg-white/10 border border-white/20 p-3 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(250,204,21,0.2)] flex items-center justify-center w-12 h-12 hover:bg-yellow-400 hover:border-yellow-400 text-white">
+                                        <Image src={logoFb} alt="Facebook" class="w-full h-full object-contain filter group-hover:brightness-0" />
+                                    </a>
+                                    <a href="https://www.instagram.com/qoribex/" target="_blank" rel="noopener noreferrer" class="group bg-white/10 border border-white/20 p-3 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(250,204,21,0.2)] flex items-center justify-center w-12 h-12 hover:bg-yellow-400 hover:border-yellow-400 text-white">
+                                        <Image src={logoIg} alt="Instagram" class="w-full h-full object-cover rounded-full filter group-hover:brightness-0" />
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/qoribex" target="_blank" rel="noopener noreferrer" class="group bg-white/10 border border-white/20 p-3 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(250,204,21,0.2)] flex items-center justify-center w-12 h-12 hover:bg-yellow-400 hover:border-yellow-400 text-white">
+                                        <Image src={logoLi} alt="LinkedIn" class="w-full h-full object-contain filter group-hover:brightness-0 group-hover:invert-0" />
+                                    </a>
+                                    <a href="https://x.com/Qoribex" target="_blank" rel="noopener noreferrer" class="group bg-white/10 border border-white/20 p-3 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(250,204,21,0.2)] flex items-center justify-center w-12 h-12 hover:bg-yellow-400 hover:border-yellow-400 text-white">
+                                        <Image src={logoX} alt="X" class="w-full h-full object-contain filter group-hover:brightness-0 group-hover:invert" />
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Footer Bottom -->
                 <div class="flex flex-col md:flex-row justify-between items-center text-sm text-blue-300/60 gap-4">
                     <p>&copy; {new Date().getFullYear()} Qoribex Agencia Digital. Todos los derechos reservados.</p>
                     <div class="flex gap-8">
@@ -363,8 +484,78 @@ const portfolioItems = [
             </div>
         </footer>
 
+        <!-- TOAST DE NOTIFICACIÓN (MEJORA UX) -->
+        <div id="successToast" class="fixed bottom-8 right-8 md:bottom-12 md:right-12 bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(31,35,163,0.3)] border-l-4 border-yellow-400 p-6 transform translate-y-[200%] opacity-0 transition-all duration-700 z-[100] flex items-start gap-4 max-w-sm pointer-events-none">
+            <div class="bg-blue-50 p-3 rounded-full flex-shrink-0 mt-1">
+                <span class="text-2xl drop-shadow-sm">🚀</span>
+            </div>
+            <div>
+                <h4 class="text-[#1F23A3] font-black text-xl leading-tight mb-1">¡Datos Capturados!</h4>
+                <p id="toastMessage" class="text-gray-600 text-sm leading-relaxed">Generando conexión segura...</p>
+            </div>
+        </div>
+
+        <!-- SCRIPT PARA MANEJAR EL FORMULARIO (WHATSAPP - PRODUCCIÓN) -->
+        <script>
+            const form = document.getElementById('contactForm');
+            const toast = document.getElementById('successToast');
+            const toastMessage = document.getElementById('toastMessage');
+
+            if (form && toast && toastMessage) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const currentForm = e.currentTarget;
+                    if (!(currentForm instanceof HTMLFormElement)) return;
+
+                    const submitter = e.submitter;
+                    const metodoContacto = (submitter instanceof HTMLButtonElement) ? submitter.value : 'whatsapp';
+
+                    const formData = new FormData(currentForm);
+                    const data = Object.fromEntries(formData.entries());
+                    const fullPhone = data.countryCode + " " + data.phone;
+                    
+                    if (metodoContacto === 'whatsapp') {
+                        const numeroQoribex = "51972594948"; 
+                        const mensajeWsp = `Hola equipo Qoribex.\n\nSoy *${data.name}* y estoy interesado/a en iniciar un proyecto de *${data.service}* con ustedes.\n\nPor favor, contáctenme a través de mi correo de respaldo:\n• Correo: ${data.email}\n\n¡Quedo a la espera de su respuesta!`;
+                        
+                        const whatsappUrl = `https://wa.me/${numeroQoribex}?text=${encodeURIComponent(mensajeWsp)}`;
+                        
+                        toastMessage.innerHTML = `Conectando con WhatsApp, <b>${data.name}</b>...`;
+                        toast.classList.remove('translate-y-[200%]', 'opacity-0');
+                        
+                        setTimeout(() => {
+                            window.open(whatsappUrl, '_blank');
+                            setTimeout(() => {
+                                toast.classList.add('translate-y-[200%]', 'opacity-0');
+                                currentForm.reset();
+                            }, 1000);
+                        }, 1500);
+
+                    } else if (metodoContacto === 'email') {
+                        const correoDestino = "hola@qoribex.com";
+                        const asunto = `Nuevo prospecto web: ${data.name} - ${data.service}`;
+                        const cuerpoMensaje = `Hola equipo Qoribex,\n\nMi nombre es ${data.name} y estoy interesado/a en iniciar un proyecto de ${data.service} con ustedes.\n\nMis datos de contacto son:\n• Teléfono: ${fullPhone}\n• Correo: ${data.email}\n\n¡Quedo a la espera de su respuesta para conversar los detalles!`;
+                        
+                        const mailtoUrl = `mailto:${correoDestino}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpoMensaje)}`;
+                        
+                        toastMessage.innerHTML = `Preparando tu correo, <b>${data.name}</b>...`;
+                        toast.classList.remove('translate-y-[200%]', 'opacity-0');
+                        
+                        setTimeout(() => {
+                            window.location.href = mailtoUrl;
+                            setTimeout(() => {
+                                toast.classList.add('translate-y-[200%]', 'opacity-0');
+                                currentForm.reset();
+                            }, 1000);
+                        }, 1500);
+                    }
+                });
+            }
+        </script>
+
     </main>
 </Layout>
 
-<!-- Script Externo (Reutilizando el de Home) -->
+<!-- Script Externo -->
 <script src="../scripts/home.js"></script>
